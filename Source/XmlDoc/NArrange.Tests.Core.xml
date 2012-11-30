@@ -1,0 +1,1900 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NArrange.Tests.Core</name>
+    </assembly>
+    <members>
+        <member name="T:NArrange.Tests.Core.BackupUtilitiesTests">
+            <summary>
+            Test fixture for the BackupUtilities class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.BackupAndRestoreTest">
+            <summary>
+            Tests the Backup and Restore methods by creating a backup, modifying files
+            and restoring.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.BackupFilesNullBackupRootTest">
+            <summary>
+            Tests the BackupFiles method with a null backup root directory.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.BackupFilesNullKeyTest">
+            <summary>
+            Tests the BackupFiles method with a null key.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.GetFileNameKeyEmptyTest">
+            <summary>
+            Tests the GetFileNameKey method with an empty string.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.GetFileNameKeyNullTest">
+            <summary>
+            Tests the GetFileNameKey method with null.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.GetFileNameKeyTest">
+            <summary>
+            Tests the GetFileNameKey method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.RestoreFilesNullBackupRootTest">
+            <summary>
+            Tests the RestoreFiles method with a null backup root directory.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.BackupUtilitiesTests.RestoreFilesNullKeyTest">
+            <summary>
+            Tests the RestoreFiles method with a null key.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.AttributedElementTests`1">
+            <summary>
+            Base test fixture for code elements with attributes.
+            </summary>
+            <typeparam name="TCodeElement">Code element type.</typeparam>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.CodeElementTests`1">
+            <summary>
+            Test fixture base for the CodeElement class.
+            </summary>
+            <typeparam name="TCodeElement">Code element type.</typeparam>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.AddChildTest">
+            <summary>
+            Tests the AddChild method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.ClearChildrenTest">
+            <summary>
+            Tests the ClearChildren method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.CloneTest">
+            <summary>
+            Tests the clone method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.InsertChildTest">
+            <summary>
+            Tests the InsertChild method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.ParentTest">
+            <summary>
+            Tests getting and setting the parent property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.RemoveChildTest">
+            <summary>
+            Tests the RemoveChild method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.DoCreateClonePrototype">
+            <summary>
+            Creates an instance to be cloned.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.DoToStringTest">
+            <summary>
+            Performs the ToString test.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CodeElementTests`1.DoVerifyClone(`0,`0)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributedElementTests`1.AddAttributeTest">
+            <summary>
+            Tests the AddAttribute method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributedElementTests`1.ClearAttributesTest">
+            <summary>
+            Tests the ClearAttributes method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributedElementTests`1.RemoveAttributeTest">
+            <summary>
+            Tests the AddAttribute method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.CommentedElementTests`1">
+            <summary>
+            Base test class for commented code elements.
+            </summary>
+            <typeparam name="TCodeElement">Code element type.</typeparam>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentedElementTests`1.AddHeaderCommentLineTest">
+            <summary>
+            Tests the AddHeaderCommentLine method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentedElementTests`1.ClearHeaderCommentLinesTest">
+            <summary>
+            Tests the ClearHeaderCommentLines method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.CommentLineElementTests">
+            <summary>
+            Test fixture for the CommentLineElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.CloneTest">
+            <summary>
+            Tests the clone method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.CreateTextAndXmlTest">
+            <summary>
+            Tests the construction of a CommentLine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.CreateTextTest">
+            <summary>
+            Tests the construction of a CommentLine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.ToStringTest">
+            <summary>
+            Tests for ToString.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for testing Clone.
+            </summary>
+            <returns>Creates a clone prototype for testing.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentLineElementTests.DoVerifyClone(NArrange.Core.CodeElements.CommentElement,NArrange.Core.CodeElements.CommentElement)">
+            <summary>
+            Actual implementation of the clone test.
+            </summary>
+            <param name="original">The original.</param>
+            <param name="clone">The clone.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.ConstructorElementTests">
+            <summary>
+            Test fixture for the ConstructorElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConstructorElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConstructorElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConstructorElementTests.DoVerifyClone(NArrange.Core.CodeElements.ConstructorElement,NArrange.Core.CodeElements.ConstructorElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.AttributeElementTests">
+            <summary>
+            Test fixture for the AttributeElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributeElementTests.CreateTest">
+            <summary>
+            Tests constructing a new UsingElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributeElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>A clone prototype for testing.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.AttributeElementTests.DoVerifyClone(NArrange.Core.CodeElements.AttributeElement,NArrange.Core.CodeElements.AttributeElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Attribute element.</param>
+            <param name="clone">Clone instance.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.CommentElementTests">
+            <summary>
+            Test fixture for the CommentElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.CreateDefaultTest">
+            <summary>
+            Tests constructing a new CommentElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.CreateTextAndTypeTest">
+            <summary>
+            Tests constructing a new CommentElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.CreateTypeTest">
+            <summary>
+            Tests constructing a new CommentElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.DoToStringTest">
+            <summary>
+            Performs the ToString test.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.CommentElementTests.DoVerifyClone(NArrange.Core.CodeElements.CommentElement,NArrange.Core.CodeElements.CommentElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.ConditionDirectiveElementTests">
+            <summary>
+            Test fixture for the ConditionDirectiveElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConditionDirectiveElementTests.CreateTest">
+            <summary>
+            Tests constructing a new UsingElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConditionDirectiveElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ConditionDirectiveElementTests.DoVerifyClone(NArrange.Core.CodeElements.ConditionDirectiveElement,NArrange.Core.CodeElements.ConditionDirectiveElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.GroupElementTests">
+            <summary>
+            Test fixture for the GroupElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.GroupElementTests.CreateTest">
+            <summary>
+            Tests constructing a new GroupElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.GroupElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.GroupElementTests.DoToStringTest">
+            <summary>
+            Test for ToString()
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.GroupElementTests.DoVerifyClone(NArrange.Core.CodeElements.GroupElement,NArrange.Core.CodeElements.GroupElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.MethodElementTests">
+            <summary>
+            Test fixture for the MethodElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.MethodElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.MethodElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.MethodElementTests.DoVerifyClone(NArrange.Core.CodeElements.MethodElement,NArrange.Core.CodeElements.MethodElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.FieldElementTests">
+            <summary>
+            Test fixture for the FieldElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.FieldElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.FieldElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.FieldElementTests.DoVerifyClone(NArrange.Core.CodeElements.FieldElement,NArrange.Core.CodeElements.FieldElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.RegionElementTests">
+            <summary>
+            Test fixture for the RegionElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.RegionElementTests.CreateTest">
+            <summary>
+            Tests constructing a new RegionElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.RegionElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.RegionElementTests.DoToStringTest">
+            <summary>
+            Test for ToString()
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.RegionElementTests.DoVerifyClone(NArrange.Core.CodeElements.RegionElement,NArrange.Core.CodeElements.RegionElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.EventElementTests">
+            <summary>
+            Test fixture for the EventElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.EventElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.EventElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.EventElementTests.DoVerifyClone(NArrange.Core.CodeElements.EventElement,NArrange.Core.CodeElements.EventElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.PropertyElementTests">
+            <summary>
+            Test fixture for the PropertyElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.PropertyElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.PropertyElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.PropertyElementTests.DoVerifyClone(NArrange.Core.CodeElements.PropertyElement,NArrange.Core.CodeElements.PropertyElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.TypeElementTests">
+            <summary>
+            Test fixture for the TypeElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.TypeElementTests.CreateTest">
+            <summary>
+            Tests the creation of a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.TypeElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.TypeElementTests.DoVerifyClone(NArrange.Core.CodeElements.TypeElement,NArrange.Core.CodeElements.TypeElement)">
+            <summary>
+            Verifies the clone was succesful.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.TypeParameterTests">
+            <summary>
+            Test fixture for the TypeParameter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.TypeParameterTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.TypeParameterTests.CreateTest">
+            <summary>
+            Tests the construction of a type parameter.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.UsingElementTests">
+            <summary>
+            Test fixture for the UsingElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.UsingElementTests.CreateTest">
+            <summary>
+            Tests constructing a new UsingElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.UsingElementTests.TypeTest">
+            <summary>
+            Tests the behavior of the Type property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.UsingElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.UsingElementTests.DoVerifyClone(NArrange.Core.CodeElements.UsingElement,NArrange.Core.CodeElements.UsingElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.NamespaceElementTests">
+            <summary>
+            Test fixture for the NamespaceElement class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.NamespaceElementTests.CreateTest">
+            <summary>
+            Tests constructing a new NamespaceElement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.NamespaceElementTests.DoCreateClonePrototype">
+            <summary>
+            Creates an instance for cloning.
+            </summary>
+            <returns>Clone prototype.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.NamespaceElementTests.DoToStringTest">
+            <summary>
+            Test for ToString()
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.NamespaceElementTests.DoVerifyClone(NArrange.Core.CodeElements.NamespaceElement,NArrange.Core.CodeElements.NamespaceElement)">
+            <summary>
+            Verifies that a clone has the same state as the original.
+            </summary>
+            <param name="original">Original element.</param>
+            <param name="clone">Clone element.</param>
+        </member>
+        <member name="T:NArrange.Tests.Core.ConditionExpressionEvaluatorTests">
+            <summary>
+            Test fixture for the ConditionExpressionEvaluator class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateAndTest">
+            <summary>
+            Tests the Evaluate method with an And expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementExpressionNullTest">
+            <summary>
+            Tests the Evaluate method with a null expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementNameContainsTest">
+            <summary>
+            Tests the Evaluate method with a Contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementNameEqualTest">
+            <summary>
+            Tests the Evaluate method with an Equal expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementNameMatchesTest">
+            <summary>
+            Tests the Evaluate method with a Matches expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementNameNotEqualTest">
+            <summary>
+            Tests the Evaluate method with a not equal expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementNullTest">
+            <summary>
+            Tests the Evaluate method with a null element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateElementParentAttributesContainsTest">
+            <summary>
+            Tests the Evaluate method with a Contains expression and a parent scope.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateFileAttributesContainsTest">
+            <summary>
+            Tests the Evaluate method with an Attributes Contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateFileExpressionNullTest">
+            <summary>
+            Tests the Evaluate method with a null expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateFileNameContainsTest">
+            <summary>
+            Tests the Evaluate method with a Contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateFileNullTest">
+            <summary>
+            Tests the Evaluate method with a null file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateFilePathContainsTest">
+            <summary>
+            Tests the Evaluate method with an Path Contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateInvalidOperatorTest">
+            <summary>
+            Tests the Evaluate method with a an operator element that has an 
+            unknown operator type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ConditionExpressionEvaluatorTests.EvaluateOrTest">
+            <summary>
+            Tests the Evaluate method with an Or expression.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.BinaryOperatorExpressionTests">
+            <summary>
+            Test fixture for the binary operator expression class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.BinaryOperatorExpressionTests.ToStringInvalidOperatorTest">
+            <summary>
+            Gets the string representation of the operator expression with an invalid operator type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.BinaryOperatorExpressionTests.ToStringTest">
+            <summary>
+            Gets the string representation of the operator expression.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.CodeConfigurationTests">
+            <summary>
+            Test fixture for the CodeConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.CloneTest">
+            <summary>
+            Tests the Clone method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new CodeConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.DefaultTest">
+            <summary>
+            Tests the Default configuration property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.NoEndRegionNamesTest">
+            <summary>
+            Tests loading a configuration with EndRegionNamesEnabled set to false.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.SerializeAndDeserializeTest">
+            <summary>
+            Tests serialization and deserialization.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.SpacesTest">
+            <summary>
+            Tests loading a configuration with spaces specified.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.CodeConfigurationTests.UpgradeProjectExtensionsTest">
+            <summary>
+            Tests conversion from the old project extension format (MSBuild only) to the new.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.UsingConfigurationTests">
+            <summary>
+            Test fixture for the UsingConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.UsingConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.UsingConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new UsingConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.UsingConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.FormattingConfigurationTests">
+            <summary>
+            Test fixture for the FormattingConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.FormattingConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.FormattingConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new FormattingConfiguration.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.LineSpacingConfigurationTests">
+            <summary>
+            Test fixture for the LineSpacingConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.LineSpacingConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.LineSpacingConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new LineSpacingConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.LineSpacingConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.ProjectHandlerConfigurationTests">
+            <summary>
+            Test fixture for the ProjectHandlerConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ProjectHandlerConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.EncodingConfigurationTests">
+            <summary>
+            Test fixture for the EncodingConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.EncodingConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.EncodingConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new EncodingConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.EncodingConfigurationTests.GetEncodingInvalidFormatTest">
+            <summary>
+            Tests GetEncoding() with an invalid codepage.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.EncodingConfigurationTests.GetEncodingTest">
+            <summary>
+            Tests valid encoding scenarios.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.EncodingConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.ElementReferenceConfigurationTests">
+            <summary>
+            Test fixture for the ElementReferenceConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ElementReferenceConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new ElementReferenceConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ElementReferenceConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.FileAttributeExpressionTests">
+            <summary>
+            Test fixture for the FileAttributeExpression class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.FileAttributeExpressionTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.RegionFormatConfigurationTests">
+            <summary>
+            Test fixture for the RegionFormattingConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionFormatConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionFormatConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new RegionsConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionFormatConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.UnaryOperatorExpressionTests">
+            <summary>
+            Test fixture for the unary operator expression class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.UnaryOperatorExpressionTests.ToStringInvalidOperatorTest">
+            <summary>
+            Gets the string representation of the operator expression with an invalid operator type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.UnaryOperatorExpressionTests.ToStringTest">
+            <summary>
+            Gets the string representation of the operator expression.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.SourceHandlerConfigurationTests">
+            <summary>
+            Test fixture for the SourceHandlerConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.SourceHandlerConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.InterfaceReferenceTests">
+            <summary>
+            Test fixture for the InterfaceReference class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.InterfaceReferenceTests.CreateDefaultTest">
+            <summary>
+            Tests creation of an InterfaceReference instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.InterfaceReferenceTests.CreateTest">
+            <summary>
+            Tests creation of an InterfaceReference instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.InterfaceReferenceTests.NameTest">
+            <summary>
+            Tests the Name property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.InterfaceReferenceTests.ReferenceTypeTest">
+            <summary>
+            Tests the ReferenceType property.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.TabConfigurationTests">
+            <summary>
+            Test fixture for the TabConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.TabConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.TabConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new TabConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.TabConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.ExtensionConfigurationTests">
+            <summary>
+            Test fixture for the ExtensionConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ExtensionConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ExtensionConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new ExtensionConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ExtensionConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.ElementConfigurationTests">
+            <summary>
+            Test fixture for the ElementConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ElementConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ElementConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new ElementConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ElementConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests">
+            <summary>
+            Test fixture for the FilterExpressionParser class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseAndExpressionTest">
+            <summary>
+            Tests parsing an AND expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseAndOrExpressionTest">
+            <summary>
+            Tests parsing an expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseComplexNegateTest">
+            <summary>
+            Tests parsing a complex negate expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseComplexTest">
+            <summary>
+            Tests parsing a complex expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseEmptyTest">
+            <summary>
+            Tests parsing a null expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseEqualsExpressionTest">
+            <summary>
+            Tests parsing an equals expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseFileNameContainsExpressionTest">
+            <summary>
+            Tests parsing a file name contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseFileNotNameContainsExpressionTest">
+            <summary>
+            Tests parsing a file name doesn't contain expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidAttributeScopeTest">
+            <summary>
+            Tests parsing an invalid attribute scope.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidAttributeTest">
+            <summary>
+            Tests parsing an invalid attribute name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidBinaryOperatorTest1">
+            <summary>
+            Tests parsing an invalid binary operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidBinaryOperatorTest2">
+            <summary>
+            Tests parsing an invalid binary operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidCasedBinaryOperatorTest">
+            <summary>
+            Tests parsing an invalid cased binary operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionExtraParenthesesTest1">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionExtraParenthesesTest2">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionMissingOperatorTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionMissingParenthesesTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionMissingQuoteTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionNoOperatorTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionNoTermsTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionStringTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidExpressionTooManyTermsTest">
+            <summary>
+            Tests parsing an invalid expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidFileAttributeScopeTest">
+            <summary>
+            Tests parsing an invalid file attribute.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidNestedExpressionTest">
+            <summary>
+            Tests parsing an invalid nested expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseInvalidUnaryOperatorTest">
+            <summary>
+            Tests parsing an invalid unary operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseMatchesExpressionTest">
+            <summary>
+            Tests parsing a regular expression match expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseNegateExpressionTest">
+            <summary>
+            Tests parsing a negation expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseOrAndExpressionTest1">
+            <summary>
+            Tests parsing an expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseOrAndExpressionTest2">
+            <summary>
+            Tests parsing an expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseOrExpressionTest">
+            <summary>
+            Tests parsing an OR expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseParentNameContainsExpressionTest">
+            <summary>
+            Tests parsing a parent name contains expression.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseStringExpressionEscapedApostropheEndTest">
+            <summary>
+            Tests parsing a string expression with an escaped apostrophe.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.ConditionExpressionParserTests.ParseStringExpressionEscapedApostropheTest">
+            <summary>
+            Tests parsing a string expression with an escaped apostrophe.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.RegionConfigurationTests">
+            <summary>
+            Test fixture for the RegionConfiguration class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionConfigurationTests.CloneTest">
+            <summary>
+            Tests the ICloneable implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionConfigurationTests.CreateTest">
+            <summary>
+            Tests the creation of a new RegionConfiguration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.RegionConfigurationTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.SortByTests">
+            <summary>
+            Test fixture for the SortBy class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.SortByTests.CloneTest">
+            <summary>
+            Tests cloning the configuration element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.SortByTests.CreateTest">
+            <summary>
+            Tests the creation of a new SortBy.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.SortByTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.FilterByTests">
+            <summary>
+            Test fixture for the FilterBy class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.FilterByTests.CreateTest">
+            <summary>
+            Tests the creation of a new FilterBy.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.FilterByTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.Configuration.GroupByTests">
+            <summary>
+            Test fixture for the GroupBy class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.GroupByTests.CloneTest">
+            <summary>
+            Tests cloning the configuration element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.GroupByTests.CreateTest">
+            <summary>
+            Tests the creation of a new GroupBy.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.GroupByTests.CustomSeparatorTest">
+            <summary>
+            Tests the CustomSeparator property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.GroupByTests.SeparatorTypeTest">
+            <summary>
+            Tests the SeparateType property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.Configuration.GroupByTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.MonoDevelopSolutionParserTests">
+            <summary>
+            Test fixture for the MonoDevelopSolutionParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.MonoDevelopSolutionParserTests._testSolutionFile">
+            <summary>
+            Test solution file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopSolutionParserTests.WriteTestSolution(System.String)">
+            <summary>
+            Writes the test solution to a file.
+            </summary>
+            <param name="fileName">File to write.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopSolutionParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null fileName.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopSolutionParserTests.ParseTest">
+            <summary>
+            Tests parsing project source files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopSolutionParserTests.TestFixtureSetup">
+            <summary>
+            Performs test fixture setup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopSolutionParserTests.TestFixtureTearDown">
+            <summary>
+            Performs test fixture cleanup.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.MonoDevelopProjectParserTests">
+            <summary>
+            Test fixture for the MonoDevelopProjectParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.MonoDevelopProjectParserTests._testProjectFile">
+            <summary>
+            Test project file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopProjectParserTests.WriteTestProject(System.String)">
+            <summary>
+            Writes the test project to a file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopProjectParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null project fileName.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopProjectParserTests.ParseTest">
+            <summary>
+            Tests parsing project source files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopProjectParserTests.TestFixtureSetup">
+            <summary>
+            Performs test fixture setup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MonoDevelopProjectParserTests.TestFixtureTearDown">
+            <summary>
+            Performs test fixture cleanup.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.EnumUtilitiesTests">
+            <summary>
+            Test fixture for the EnumUtilities class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.EnumUtilitiesTests.ToStringTest">
+            <summary>
+            Tests the ToString method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.FileUtilitiesTests">
+            <summary>
+            Test fixture for the FileUtilities class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileUtilitiesTests.EncodingTestFileDirectory">
+            <summary>
+            Directory containing files for encoding testing.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileUtilitiesTests.GetEncodingTest">
+            <summary>
+            Tests the GetEncoding method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ISourceCodeTestFile">
+            <summary>
+            Interface for a source code test file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ISourceCodeTestFile.GetReader">
+            <summary>
+            Gets a TextReader for this test file.
+            </summary>
+            <returns>The TextReader.</returns>
+        </member>
+        <member name="P:NArrange.Tests.Core.ISourceCodeTestFile.Assembly">
+            <summary>
+            Gets the assembly for the test file.
+            </summary>
+        </member>
+        <member name="P:NArrange.Tests.Core.ISourceCodeTestFile.Name">
+            <summary>
+            Gets the name of the test file.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.MSBuildProjectParserTests">
+            <summary>
+            Test fixture for the MSBuildProjectParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.MSBuildProjectParserTests._testProjectFile">
+            <summary>
+            Test project file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildProjectParserTests.WriteTestProject(System.String)">
+            <summary>
+            Writes the test project to a file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildProjectParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null project fileName.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildProjectParserTests.ParseTest">
+            <summary>
+            Tests parsing project source files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildProjectParserTests.TestFixtureSetup">
+            <summary>
+            Performs test fixture setup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildProjectParserTests.TestFixtureTearDown">
+            <summary>
+            Performs test fixture cleanup.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.MSBuildSolutionParserTests">
+            <summary>
+            Test fixture for the MSBuildSolutionParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.MSBuildSolutionParserTests._testSolutionFile">
+            <summary>
+            Test solution file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildSolutionParserTests.WriteTestSolution(System.String)">
+            <summary>
+            Writes the test solution to a file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildSolutionParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null fileName.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildSolutionParserTests.ParseTest">
+            <summary>
+            Tests parsing project source files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildSolutionParserTests.TestFixtureSetup">
+            <summary>
+            Performs test fixture setup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.MSBuildSolutionParserTests.TestFixtureTearDown">
+            <summary>
+            Performs test fixture cleanup.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ProjectHandlerTests">
+            <summary>
+            Test fixture for the ProjectHandler class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ProjectHandlerTests.CreateTest">
+            <summary>
+            Tests creating a new project handler.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ProjectHandlerTests.CreateWithAssemblyTest">
+            <summary>
+            Tests creating a new project handler.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ProjectHandlerTests.CreateWithDefaultConfigurationTest">
+            <summary>
+            Tests creating a project handler with a default configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ProjectHandlerTests.CreateWithNullConfigurationTest">
+            <summary>
+            Tests creating with a null configuration.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ProjectManagerTests">
+            <summary>
+            Test fixture for the ProjectManager class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ProjectManagerTests.NullConfigurationTest">
+            <summary>
+            Tests creating a new ProjectManager with a null configuration.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.GroupedInserterTests">
+            <summary>
+            Test fixture for the GroupedInserter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.CreateTest">
+            <summary>
+            Tests the creation of a GroupedInserter instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.CreateWithNullTest">
+            <summary>
+            Test construction with a null configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.GroupSortByAccessTest">
+            <summary>
+            Tests inserting groups in a sorted manner.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.GroupSortByNameTest">
+            <summary>
+            Tests inserting groups in a sorted manner.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.InsertSortedTest">
+            <summary>
+            Tests inserting elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.InsertTest">
+            <summary>
+            Tests inserting elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.GroupedInserterTests.NestedGroupSortTest">
+            <summary>
+            Tests inserting nested groups in a sorted manner.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests">
+            <summary>
+            Test fixture for the ElementUtilities class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.FormatNullElementTest">
+            <summary>
+            Tests Format with a null element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.FormatNullStringTest">
+            <summary>
+            Tests Format with a null format string.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.FormatTest">
+            <summary>
+            Tests the Format method with a valid format string and element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeAccessTest">
+            <summary>
+            Tests the GetAttribute method for Access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeAttributesTest">
+            <summary>
+            Tests the GetAttribute method for Attributes.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeElementTypeTest">
+            <summary>
+            Tests the GetAttribute method for ElementType.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeModifierTest">
+            <summary>
+            Tests the GetAttribute method for Modifier.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeNameTest">
+            <summary>
+            Tests the GetAttribute method for Name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeNoneTest">
+            <summary>
+            Tests the GetAttribute method for None.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeElements.ElementUtilitiesTests.GetAttributeTypeTest">
+            <summary>
+            Tests the GetAttribute method for Type.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ElementFilterTests">
+            <summary>
+            Test fixture for the ElementFilter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ElementFilterTests.IsMatchAccessTest">
+            <summary>
+            Tests access filtering.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ElementFilterTests.IsMatchNameTest">
+            <summary>
+            Tests name filtering.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ElementFilterTests.RequiredScope">
+            <summary>
+            Tests the RequiredScope property.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ChainElementArrangerTests">
+            <summary>
+            Test fixture for the ChainElementArranger class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.AddArrangerNullTest">
+            <summary>
+            Tests the AddArranger method with a null arranger.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.CanArrangeTest">
+            <summary>
+            Tests the CanArrange method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.UnsupportedArrangeNoParentTest">
+            <summary>
+            Tests the Arrange method with an element that cannot be handled.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.UnsupportedArrangeWithParentTest">
+            <summary>
+            Tests the Arrange method with an element that cannot be handled.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger">
+            <summary>
+            Test code element arranger.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger._arrangeCalled">
+            <summary>
+            Whether or not arrage was called.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger._canArrange">
+            <summary>
+            Whether or not this arranger can process elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger.#ctor(System.Boolean)">
+            <summary>
+            Creates a test element arranger.
+            </summary>
+            <param name="canArrange">Fixed value for the CanArrange property.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger.ArrangeElement(NArrange.Core.CodeElements.ICodeElement,NArrange.Core.CodeElements.ICodeElement)">
+            <summary>
+            Arranges the specified element within the parent element.
+            </summary>
+            <param name="parentElement">The parent element.</param>
+            <param name="codeElement">The code element.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger.CanArrange(NArrange.Core.CodeElements.ICodeElement)">
+            <summary>
+            Determines whether or not this arranger can handle arrangement of
+            the specified element.
+            </summary>
+            <param name="codeElement">The code element.</param>
+            <returns>
+            <c>true</c> if this instance can arrange the specified code element; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger.CanArrange(NArrange.Core.CodeElements.ICodeElement,NArrange.Core.CodeElements.ICodeElement)">
+            <summary>
+            Determines whether or not this arranger can handle arrangement of
+            the specified element.
+            </summary>
+            <param name="parentElement">The parent element.</param>
+            <param name="codeElement">The code element.</param>
+            <returns>
+            <c>true</c> if this instance can arrange the specified parent element; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:NArrange.Tests.Core.ChainElementArrangerTests.TestElementArranger.ArrangeCalled">
+            <summary>
+            Gets a value indicating whether or not arrange was called.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ElementArrangerFactoryTests">
+            <summary>
+            Test fixture for the ElementArrangerFactory class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ElementArrangerFactoryTests.CreateElementArrangerNullConfigurationTest">
+            <summary>
+            Tests calling CreateElementArranger with a null configuration.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.RegionArrangerTests">
+            <summary>
+            Test fixture for the RegionArranger class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.RegionArrangerTests.CanArrangeTest">
+            <summary>
+            Tests the CanArrange method with various inputs.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.RegionArrangerTests.CreateNullParentConfigurationTest">
+            <summary>
+            Tests creating a RegionArranger with a null parent configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.RegionArrangerTests.CreateNullRegionConfigurationTest">
+            <summary>
+            Tests creating a RegionArranger with a null region configuration.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.SolutionParserTests">
+            <summary>
+            Test fixture for the SolutionParser class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SolutionParserTests.ExtensionsTest">
+            <summary>
+            Tests the extensions property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SolutionParserTests.InstanceTest">
+            <summary>
+            Tests the singleton instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SolutionParserTests.IsSolutionTest">
+            <summary>
+            Tests the IsSolution method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SolutionParserTests.ParseNullTest">
+            <summary>
+            Tests parsing a null filename.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.SortedInserterTests">
+            <summary>
+            Test fixture for the SortedInserter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.CreateTest">
+            <summary>
+            Tests the creation of a SortedInserter instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.CreateWithNullTest">
+            <summary>
+            Test construction with a null configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByAccessAndNameTest">
+            <summary>
+            Tests inserting elements by access and name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByAccessDescendingAndNameTest">
+            <summary>
+            Tests inserting elements by access and name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByAccessTest">
+            <summary>
+            Tests inserting elements by access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByElementTypeAndNameTest">
+            <summary>
+            Tests inserting elements by element type then by name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByElementTypeTest">
+            <summary>
+            Tests inserting elements by element type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByNameDescendingTest">
+            <summary>
+            Tests inserting elements by name in descending order.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByNameTest">
+            <summary>
+            Tests inserting elements by name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByNoneTest">
+            <summary>
+            Tests inserting elements without any criteria.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByTypeElementTypeDescendingTest">
+            <summary>
+            Tests inserting type elements by Type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertByTypeTest">
+            <summary>
+            Tests inserting elements by type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SortedInserterTests.InsertNullTest">
+            <summary>
+            Tests inserting a null element.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.TestLogger">
+            <summary>
+            Test logger.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.TestLogger._events">
+            <summary>
+            Logged events collection.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.TestLogger._writeToConsole">
+            <summary>
+            Whether or not events should also be written to the console.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.Clear">
+            <summary>
+            Clears the test log.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.HasMessage(NArrange.Core.LogLevel,System.String)">
+            <summary>
+            Determines if the specified message exists in the log.
+            </summary>
+            <param name="level">Log level.</param>
+            <param name="message">Log message.</param>
+            <returns>Whether or not the message exists in the log.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.HasPartialMessage(NArrange.Core.LogLevel,System.String)">
+            <summary>
+            Determines if a partial matching message exists in the log.
+            </summary>
+            <param name="level">Log level.</param>
+            <param name="message">Log message.</param>
+            <returns>Whether or not the message exists in the log.</returns>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.LogMessage(NArrange.Core.LogLevel,System.String,System.Object[])">
+            <summary>
+            Logs a message.
+            </summary>
+            <param name="level">Log level.</param>
+            <param name="message">Log message.</param>
+            <param name="args">Message arguments.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.ToString">
+            <summary>
+            Gets the text of all events.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="P:NArrange.Tests.Core.TestLogger.Events">
+            <summary>
+            Gets the log event history.
+            </summary>
+        </member>
+        <member name="P:NArrange.Tests.Core.TestLogger.WriteToConsole">
+            <summary>
+            Gets or sets a value indicating whether or not messages should be written 
+            to the console.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.TestLogger.TestLogEvent">
+            <summary>
+            Test log event.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.TestLogger.TestLogEvent.Level">
+            <summary>
+            Log level.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.TestLogger.TestLogEvent.Message">
+            <summary>
+            Log message.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.TestLogEvent.#ctor(NArrange.Core.LogLevel,System.String)">
+            <summary>
+            Creates a new test log event.
+            </summary>
+            <param name="level">Log level.</param>
+            <param name="message">Log message.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestLogger.TestLogEvent.ToString">
+            <summary>
+            Gets the string representation.
+            </summary>
+            <returns>String representation.</returns>
+        </member>
+        <member name="T:NArrange.Tests.Core.TestUtilities">
+            <summary>
+            Test utilities.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestUtilities.AssertNotEmpty(System.String)">
+            <summary>
+            Verifies that a file is not empty.
+            </summary>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:NArrange.Tests.Core.TestUtilities.GetCompilerError(System.CodeDom.Compiler.CompilerResults)">
+            <summary>
+            Retrieves a compiler error from a compiler result.
+            </summary>
+            <param name="results">Compiler results.</param>
+            <returns>Compiler error if present, otherwise null.</returns>
+        </member>
+        <member name="P:NArrange.Tests.Core.TestUtilities.TestConfigurationFiles">
+            <summary>
+            Gets the test code configuration files.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.CodeWriterTests`1">
+            <summary>
+            Base tests for ICodeWriter impelementations.
+            </summary>
+            <typeparam name="TCodeWriter">The type of the code writer.</typeparam>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeWriterTests`1.TabStyleUnknownTest">
+            <summary>
+            Tests writing an element with an unknown tab style.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeWriterTests`1.WriteNullElementsTest">
+            <summary>
+            Tests calling Write with a null element collection.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeWriterTests`1.WriteNullWriterTest">
+            <summary>
+            Tests calling Write with a null writer.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeWriterTests`1.WriteUnrecognizedTypeTest">
+            <summary>
+            Tests writing an ungrecognized Type element.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.WriteArrangedTests`2">
+            <summary>
+            Base test fixture for writing arranged code elements.
+            </summary>
+            <typeparam name="TCodeParser">Parser type.</typeparam>
+            <typeparam name="TCodeWriter">Code writer type.</typeparam>
+        </member>
+        <member name="M:NArrange.Tests.Core.WriteArrangedTests`2.WriteArrangedElementTest">
+            <summary>
+            Tests writing a tree of arranged elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.WriteArrangedTests`2.Compile(System.String,System.String)">
+            <summary>
+            Compiles source code text to an assembly with the specified name.
+            </summary>
+            <param name="text">Text to compile.</param>
+            <param name="assemblyName">Output assembly name.</param>
+            <returns>Compiler results.</returns>
+        </member>
+        <member name="P:NArrange.Tests.Core.WriteArrangedTests`2.ValidTestFiles">
+            <summary>
+            Gets an array of valid test files.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.ZipUtilitiesTest">
+            <summary>
+            Test fixture for the ZipUtilities class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.ZipUtilitiesTest.ZipAndUnzipTest">
+            <summary>
+            Tests zipping and unzipping files.
+            </summary>
+        </member>
+    </members>
+</doc>

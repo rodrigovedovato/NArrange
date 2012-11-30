@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>narrange-console</name>
+    </assembly>
+    <members>
+        <member name="T:NArrange.ConsoleApplication.CommandArguments">
+            <summary>
+            Command arguments class for the NArrange console application.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.UnixSwitch">
+            <summary>
+            Unix flag/switch prefix character.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.WindowsSwitch">
+            <summary>
+            Windows flag/switch prefix character.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._backup">
+            <summary>
+            Perform backup.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._configuration">
+            <summary>
+            Configuration file.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._input">
+            <summary>
+            Input file or directory.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._output">
+            <summary>
+            Output file or directory.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._restore">
+            <summary>
+            Perform restore.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments._trace">
+            <summary>
+            Trace logging.
+            </summary>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.CommandArguments.#ctor">
+            <summary>
+            Do not allow creation.
+            </summary>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.CommandArguments.Parse(System.String[])">
+            <summary>
+            Parses command arguments from an array of strings.
+            </summary>
+            <param name="args">String array arguments</param>
+            <returns>A CommandArguments instance</returns>'=
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.CommandArguments.OnParseError(System.String)">
+            <summary>
+            Called when a parsing error occurs.
+            </summary>
+            <param name="invalidFlag">Invalid flag text.</param>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.CommandArguments.OnParseError">
+            <summary>
+            Called when a parsing error occurs.
+            </summary>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.CommandArguments.ParseFlag(System.String)">
+            <summary>
+            Parses a command argument flag from a text string.
+            </summary>
+            <param name="flagString">Command argument flag text.</param>
+            <returns>Command argument flag.</returns>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Backup">
+            <summary>
+            Gets a value indicating whether or not a backup should be performed.
+            </summary>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Configuration">
+            <summary>
+            Gets the configuration file.
+            </summary>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Input">
+            <summary>
+            Gets the input file.
+            </summary>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Output">
+            <summary>
+            Gets the output file.
+            </summary>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Restore">
+            <summary>
+            Gets a value indicating whether or not a restore should be performed.
+            </summary>
+        </member>
+        <member name="P:NArrange.ConsoleApplication.CommandArguments.Trace">
+            <summary>
+            Gets a value indicating whether or not tracing should be performed.
+            </summary>
+        </member>
+        <member name="T:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag">
+            <summary>
+            Enumeration that defines the valid command argument flags
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag.Unknown">
+            <summary>
+            Unknown command argument.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag.Configuration">
+            <summary>
+            Configuration file.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag.Backup">
+            <summary>
+            Perform backup.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag.Restore">
+            <summary>
+            Perform restore.
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.CommandArguments.CommandArgumentFlag.Trace">
+            <summary>
+            Trace logging.
+            </summary>
+        </member>
+        <member name="T:NArrange.ConsoleApplication.Program">
+            <summary>
+            NArrange console application
+            </summary>
+        </member>
+        <member name="F:NArrange.ConsoleApplication.Program.Fail">
+            <summary>
+            Execution error code.
+            </summary>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.Program.GetCopyrightText">
+            <summary>
+            Gets the copyright text.
+            </summary>
+            <returns>Application copyright text.</returns>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.Program.GetUsageText">
+            <summary>
+            Gets usage information text.
+            </summary>
+            <returns>Application usage text.</returns>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.Program.Main(System.String[])">
+            <summary>
+            Application entry point.
+            </summary>
+            <param name="args">Command argument strings.</param>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.Program.Run(NArrange.Core.ILogger,NArrange.ConsoleApplication.CommandArguments)">
+            <summary>
+            Runs NArrange using the specified arguments.
+            </summary>
+            <param name="logger">Logger for messages.</param>
+            <param name="commandArgs">Command arguments.</param>
+            <returns>True if succesful, otherwise false.</returns>
+        </member>
+        <member name="M:NArrange.ConsoleApplication.Program.WriteUsage">
+            <summary>
+            Writes usage information to the console.
+            </summary>
+        </member>
+    </members>
+</doc>

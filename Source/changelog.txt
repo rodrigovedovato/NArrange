@@ -1,0 +1,502 @@
+2009-12-05  James Nies
+
+	* Changed the behavior of element sorting to ignore case for string
+	  attributes (e.g. name). This fixes the sorting of using
+	  directives for StyleCop rule SA1210.
+	* - Made improvements to the recent nested grouping changes and
+	  fixed a regression for the grouping of members by access.
+	  - Fixed sorting of members by modifiers.
+	* Fixed generation of changelog.txt.
+	* Changed the sort behavior for alias using directives to conform
+	  to StyleCop rules SA1209 and SA1211. The default config has been
+	  updated for this behavior. If you
+	  are using a custom configuration, please update the
+	  "DefaultUsing" element in your file to pick up this change.
+
+2009-10-13  James Nies
+
+	* Fixed moving C# using statements from the Namespace level to the
+	  File level and improved parse error handling.
+	* Fixed moving C# using statements from the Namespace level to the
+	  File level and improved parse error handling.
+
+2009-07-07  James Nies
+
+	* Bumped version
+	* Updated changelog
+	* - Fixed parsing of C# events with generic type signatures
+	  - Upgraded build process from MS Source Analysis to StyleCop 4.3
+
+2008-12-30  James Nies
+
+	* Changed HTML doc title.
+
+2008-12-24  James Nies
+
+	* Fixed a C# parsing bug with using statements that redefine a
+	  generic type. (Thanks to megakid for providing the parser change)
+	* Added unit tests for the RegionArranger class.
+	* Added SharpZipLib to the MSI.
+	* Updated external links in HTML documentation.
+
+2008-08-17  James Nies
+
+	* VS 2008 WIX project compatibility changes.
+	* Convert projects for VS 2008 compatibility.
+
+2008-08-11  James Nies
+
+	* Bumped config versions
+	* Bumped version
+	* Updated changelog
+	* Fixed ordering of static events.
+	* Updated changelog
+	* No need to lock the instance when creating the child collection.
+
+2008-08-10  James Nies
+
+	* Updated documentation.
+	* - Moved license.rtf to the trunk root and modified setup/build
+	  scripts for this
+	  - Modified the MSI to optionally display the readme and release
+	  notes and added an Add/Remove programs icon
+	* - Incorporated the MSI WIX project into the distribution build
+	  script.
+	  - MSI work (bitmaps, shortcuts, sample config files, readme)
+
+2008-08-09  James Nies
+
+	* Additional StyleCop compatibility configuration changes.
+
+2008-08-04  James Nies
+
+	* Build work
+	  - Run StyleCop against source files during distribution build
+	  - Copy license.rtf to the root of the binary and source
+	  distributions
+	* Updated changelog
+
+2008-08-03  James Nies
+
+	* - Fixed default ordering of fields for StyleCop compatibility
+	  - When arranging static fields, determine dependencies and sort
+	  appropriately
+	  - Cleaned up header comments
+	  - When loading the configuration, use the serializer error
+	  handling for unknown elements and attributes
+
+2008-07-27  James Nies
+
+	* Create separate solutions for msbuild 2005 and 2008 formats.
+
+2008-07-27  Justin Dearing
+
+	* Added an MSI Setup project.
+	  Added solution folders to the solution.
+
+2008-07-27  James Nies
+
+	* - Provide a roughly StyleCop compatible default configuration for
+	  ordering of members.
+	  - Allow consecutive blank lines to be removed within member
+	  bodies.
+	  - Allow disabling of directives for individual regions.
+	  - Allow nested regions.
+	  - Fixed a bug where whitespace preceding a line was not fully
+	  converted to tabs/spaces. Also, trim trailing whitespace in
+	  member bodies.
+
+2008-07-11  James Nies
+
+	* Bumped version to 0.2.7.
+	* Updated changelog.
+	* Updated documentation.
+	* Allow region directives to be written and parsed as comments.
+
+2008-07-07  James Nies
+
+	* Created changelog.txt from the Subversion revision history.
+
+2008-07-05  James Nies
+
+	* Missed a file when normalizing line endings.
+	* Removed an extraneous attribute not processed by the
+	  configuration.
+	* Comment/whitespace clean-up.
+
+2008-07-04  James Nies
+
+	* Fixed an issue parsing escaped strings in C# member bodies.
+
+2008-07-03  James Nies
+
+	* Fixed parsing of nullable type references containing whitespace.
+
+2008-06-30  James Nies
+
+	* Fixed a bug where in certain scenarios, the text of commented out
+	  elements was being reversed.
+	* Fixed a documentation typo.
+	* Bumped version
+
+2008-06-29  James Nies
+
+	* Updated NUnit references to version 2.4.7 and reorganized the
+	  dependencies directory.
+	* Fixed parsing of C# generic type references containing whitespace
+
+2008-06-28  James Nies
+
+	* Initial implementation for handling conditional compilation
+	  preprocessor directives.
+
+2008-06-26  James Nies
+
+	* Reverted accidental check-in.
+
+2008-06-25  James Nies
+
+	* Set EOL style for files to native.
+	* Normalized line endings.
+	* NArranged source files.
+
+2008-06-25  Justin Dearing
+
+	* Cleaned up code via ReHharper.
+	  Added missing header from CodeParser.cs.
+
+2008-06-24  Justin Dearing
+
+	* Removed unnecessary using statements.
+	  This is all of them.
+	* Removed unnecessary using statements.
+
+2008-06-17  James Nies
+
+	* Fixed writing of Implements for VB events
+
+2008-06-15  James Nies
+
+	* Bumped version
+	* Additional unit tests
+	* Allow processing of MonoDevelop solution (.mds) and project
+	  (.mdp) files.
+
+2008-06-14  James Nies
+
+	* - Fixed command line argument parsing issues under Mono/Linux by
+	  using a dash for the switch prefix.
+	  - Made the Configuration Editor Mono compatible and fixed a
+	  button quirk when running under Mono.
+	  - Refactoring of SolutionParser.
+
+2008-06-10  James Nies
+
+	* Cleaned up some documentation formatting.
+
+2008-06-08  James Nies
+
+	* Bumped version
+	* Fixed an issue with the sort direction of inner sorts.
+	* Fixed handling of extra parentheses and improved validation for
+	  condition expressions.
+	* Allow the configuration editor to load configuration files with
+	  invalid element references.
+
+2008-06-06  James Nies
+
+	* Preserve trailing comments for fields.
+	* Reverted previous change.
+
+2008-06-05  James Nies
+
+	* Fixed parsing of VB method/Handles identifiers beginning with an
+	  underscore.
+	* - Fixed the default configuration for arranging enums into an
+	  "Enumerations" region.
+	  - Fixed an issue with the insertion of region elements.
+
+2008-06-02  James Nies
+
+	* Bumped version.
+	* Added a screenshot of the config editor to the documentation.
+	* Fixed doc version.
+
+2008-06-01  James Nies
+
+	* Standardized event handler names.
+	* Use common assembly info for the configuration application.
+	* Arranged
+	* Ignore new bin and obj directories.
+	* Initial creation of the configuration editor.
+
+2008-05-29  James Nies
+
+	* - Fixed extra whitespace being written before multiline C# field
+	  initial values
+	  - Minor performance tweaks
+	  - Additional unit tests
+
+2008-05-28  James Nies
+
+	* Allow arranging of all source files in a directory.
+	* Prep configuration classes for config editor support.
+
+2008-05-24  James Nies
+
+	* Fixed writing of multiple Handles declarations for VB methods
+	* Fixed line feeds for VB field groups.
+	* Added note for custom config users.
+	* - When parsing, preserve element access when "None"
+	  (unspecified).
+	  - Changed the default XML config file to categorize members with
+	  an unspecified access as Private.
+
+2008-05-23  James Nies
+
+	* Bumped version.
+	* - Fixed handling of new lines in C# attribute parameters
+	  - Added additional unit tests
+	  - Minor performance improvements
+	* Updated documentation
+
+2008-05-22  James Nies
+
+	* Arrange performance improvements
+	* By default, detect file encodings. Also allow encoding for all
+	  files to be specified in the XML config.
+
+2008-05-21  James Nies
+
+	* Fixed parsing and writing of VB fields and functions that don't
+	  have a type specified
+	* Bumped version.
+
+2008-05-19  James Nies
+
+	* Updated the operator documentation, which was missed in the
+	  previous release.
+	* Bumped version.
+	* - Allow element configurations to be referenced in the XML
+	  configuration file
+	  - Added type element references to the default config for
+	  handling root-level and nested classes
+	* Added release note for default exclusion of designer source
+	  files.
+	* - Added a Matches binary operator, =~, for regular expression
+	  support in condition expressions.
+
+2008-05-18  James Nies
+
+	* - Allow filtering of source and project files by associating
+	  filters with handler extensions in the configuration file
+	  - Added additional unit tests
+
+2008-05-17  James Nies
+
+	* Reduced documentation image sizes.
+
+2008-05-16  James Nies
+
+	* Merged the following changes for Everton Elvio Koser, replicated
+	  them for VB and added unit tests:
+	  - Fixed ordering of new and const for C# fields.
+	  - Honor the new keyword for nested types in C#.
+
+2008-05-15  James Nies
+
+	* Fixed another documentation URL.
+
+2008-05-14  James Nies
+
+	* Launch documentation links in a new browser window and fixed some
+	  documentation typos.
+	* Made icon image transparent.
+	* Added a 64 x 64 icon image file.
+
+2008-05-13  James Nies
+
+	* 
+	* HTML doc rename.
+	* HTML doc rename.
+	* HTML doc rename.
+	* Minor documentation fixes.
+
+2008-05-12  James Nies
+
+	* Bumped version and correct VB assembly version.
+	* Include documentation in binary release.
+	* Move unused original doc images to a special folder for
+	  exclusion.
+	* Updated release text.
+	* Updated release text.
+	* More documentation.
+	* Added demo to documentation.
+
+2008-05-11  James Nies
+
+	* Initial creation of documentation file.
+	* Moved some doc images.
+	* Added documentation images.
+	* Improved parser handling of unhandled element text.
+
+2008-05-08  James Nies
+
+	* - Allow scoping in element attribute expression evaluation.
+	  - By default, place fields in types with StructLayout attributes
+	  in a "Fixed Fields" region and do not sort.
+
+2008-05-07  James Nies
+
+	* Parse attribute names and params to the code element model, vs.
+	  entire attribute text. This is a precursor to fixing the
+	  StructLayout bug(1955289).
+
+2008-05-05  James Nies
+
+	* Added screenshot images to revision control.
+	* Renamed images
+	* Renamed images
+
+2008-05-03  James Nies
+
+	* Additional tests
+	* Additional tests
+	* Fixed handling of C# fixed size buffer fields (i.e. "fixed"
+	  keyword)
+
+2008-04-28  James Nies
+
+	* Bumped version
+	* - Fixed parsing of properties with multiple index parameters.
+	  - Checking in missed file from previous check-in.
+	* Allow configuration of writing end region names
+	* - Preserve header comments (i.e. do not attach to using/import
+	  statements) and by default surround with a "Header" region.
+	  - Added a != operator for condition expressions.
+	  - Fixed some behavior in multiple attribute (i.e. nested)
+	  sorting.
+
+2008-04-27  James Nies
+
+	* Additional writer refactoring.
+	* Updated release change log.
+	* Refactored code writers to share a common base code visitor and
+	  improved writing for varying configurations.
+	* Fixed writing of C# volatile fields.
+
+2008-04-25  James Nies
+
+	* Bumped version
+
+2008-04-24  James Nies
+
+	* Ignore new bin folders.
+	* Ignore new bin folders.
+	* - Fixed a bug where the output file override was not being
+	  acknowledged
+	  and improved the handling of command line args.
+	  - Added support for C# partial methods.
+	  - Fixed C# parsing of array return types with intermixed spaces.
+	  - Fixed a C# parsing error where type parameters were always
+	  expected
+	  for generic type definitions.
+	  - Initial support for arranging Visual Basic .NET code.
+
+2008-03-30  James Nies
+
+	* Bumped version number.
+
+2008-03-27  James Nies
+
+	* Added readme text for closing comments.
+	* 1. Fixed config file command line argument parsing.
+	  2. Allow closing comments to be written.
+	  3. Fixed extra tabs being written after C# field declaration
+	  statements.
+
+2008-03-24  James Nies
+
+	* Ignore bin and obj folders in Visual Basic projects.
+	* Rough VB parser implementation.
+
+2008-02-25  James Nies
+
+	* Fixed parsing of C# generic delegates.
+
+2008-02-18  James Nies
+
+	* Bumped version
+	* 1. Fixed writing of C# redefine using statements.
+	  2. Added images to revision control.
+	  3. Some refactoring of the CSharpParser class.
+
+2008-02-11  James Nies
+
+	* Fixed parsing of C# verbatim string literals (e.g. @"\\Server\").
+	* Fixed several C# parsing bugs.
+
+2008-02-07  James Nies
+
+	* Added text for backup/restore.
+	* 1. Only backup files that will be modified.
+	  2. Added config file comments.
+
+2008-02-04  James Nies
+
+	* Added a backup and restore feature.
+
+2008-02-03  James Nies
+
+	* Added additional unit tests.
+
+2008-02-02  James Nies
+
+	* Preserve block header comments. Previously, these were being
+	  parsed and converted to individual line comments.
+
+2008-01-30  James Nies
+
+	* Fixed ordering of regions to respect the order present in the
+	  configuration file.
+
+2008-01-27  James Nies
+
+	* Parse regions into the code element tree.
+	* Additional unit testing.
+
+2008-01-26  James Nies
+
+	* Improved upon previous revision.
+
+2008-01-25  James Nies
+
+	* 1. Improved performance of the CSharpParser by reducing the
+	  number of calls to TryParseElement.
+	  2. Added a ZipUtilities class to Core.
+
+2008-01-22  James Nies
+
+	* 1. Fixed some extraneous tabs being written by the C# writer.
+	  2. Allow configuration of tab style.
+
+2008-01-18  James Nies
+
+	* 1. Removed an extraneous new line after Type members.
+	  2. Added an MSBuild task to ease release creation.
+
+2008-01-09  James Nies
+
+	* Bumped assembly versions.
+	* Fixed parsing of events with generic return types.
+	* Improved console logging and error handling.
+
+2008-01-06  James Nies
+
+	* Added a disclaimer.
+	* Added readme text.
+	* Ignore unit test result file for SVN commit.
+	* Ignore bin and obj folders for SVN commit.
+	* Removed the pre-build event.
+	* Initial creation.
+

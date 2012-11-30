@@ -1,0 +1,63 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<!-- C9A6181D-BCAD-4561-A4A2-1D464646C6D3 -->
+	<Product Id="*"
+		Name="NArrange $(var.ProductVersion) (Beta)"
+		Language="1033"
+		Version="$(var.ProductVersion)"
+		UpgradeCode="AAF3AD2C-8C0A-4DE7-B603-B2D88BBE1737"
+		Manufacturer="James Nies and NArrange Contributors">
+
+		<Package InstallerVersion="200" Compressed="yes"/>
+		
+		<Icon Id="NArrange.exe" SourceFile="..\Images\LogoIcon.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="NArrange.exe" />
+		<Property Id='ARPCOMMENTS'>NArrange .NET Code Organizer</Property>
+		<Property Id='ARPCONTACT'>email: james@narrange.net</Property>
+		<Property Id='ARPURLINFOABOUT'>http://www.narrange.net</Property>
+		<Property Id="ALLUSERS" Value="1"/>
+		
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+		
+		<Condition Message='.NET Framework 2.0 must be installed prior to installation of this product.'>
+    		Installed OR (MsiNetAssemblySupport >= "2.0.50727")
+		</Condition>
+		
+		<!-- Installation directory and files are defined in Files.wxs -->
+		<Directory Id="TARGETDIR" Name="SourceDir"/>
+		
+		<Feature Id="NArrange"
+		         Title="NArrange Binaries"
+		         Description="NArrange console application, GUI configuration, and supporting DLLs."
+		         Level="1"
+		         ConfigurableDirectory="INSTALLDIR">
+			<ComponentGroupRef Id="NArrange.Core"/>
+		</Feature>		
+
+		<!-- Prompt the user to view the readme and release note files -->
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="View readme and release notes" />
+		<Property Id='WIXUI_EXITDIALOGOPTIONALCHECKBOX' Value='1' />
+		
+		<CustomAction Id="ViewReadme" Directory="INSTALLDIR" ExeCommand="[SystemFolder]notepad.exe readme.txt" Return="asyncNoWait" />
+		<CustomAction Id="ViewRelease" Directory="INSTALLDIR" ExeCommand="[SystemFolder]notepad.exe release.txt" Return="asyncNoWait" />
+
+		<!-- 
+			Using the Wix UI library
+ 
+			With the the WixUI_FeatureTree dialog set the user goes 
+			directly from the license agreement dialog to the feature 
+			customization dialog. This dialog set is useful
+			when your product installs all features by default. 
+		-->
+		<UI>
+    		<UIRef Id="WixUI_FeatureTree"/>
+    		<Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="ViewReadme" Order="1">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed</Publish>
+			<Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="ViewRelease" Order="2">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed</Publish>
+		</UI>
+	</Product>
+</Wix>

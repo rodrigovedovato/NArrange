@@ -1,0 +1,238 @@
+﻿<?xml version="1.0"?>
+<CodeConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Handlers>
+		<!-- Source handlers are plugins that help NArrange parse and write source files -->
+		<SourceHandler Assembly="NArrange.CSharp, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null">
+			<!-- List of project extensions handled by the handler's IProjectParser -->
+			<ProjectExtensions>
+				<Extension Name="csproj"/>
+			</ProjectExtensions>
+			<!-- List of source file extensions valid for the handler's ICodeParser-->
+			<SourceExtensions>
+				<Extension Name="cs"/>
+				<!-- If your project uses other extensions for C# files add them here-->
+			</SourceExtensions>
+		</SourceHandler>
+		<SourceHandler Assembly="NArrange.VisualBasic, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null">
+			<ProjectExtensions>
+				<Extension Name="vbproj"/>
+			</ProjectExtensions>
+			<SourceExtensions>
+				<Extension Name="vb"/>
+			</SourceExtensions>
+		</SourceHandler>
+	</Handlers>
+	<Tabs Style="Tabs" SpacesPerTab="4"/>
+	<ClosingComments Enabled="false" Format="End $(ElementType) $(Name)"/>
+	<Elements>
+		<Region Name="Header">
+			<Elements>
+				<Element Type="Comment">
+					<!-- File header comments -->
+					<Filter Condition="$(Type) != 'XmlLine'"/>
+				</Element>
+			</Elements>
+		</Region>
+		<Region Name="Imports">
+			<Elements>
+				<Element Type="Using">
+					<Group By="Name" AttributeCapture="^(.*?)(\.|$)" SeparatorType="NewLine"/>
+					<Sort By="Name"/>
+				</Element>
+			</Elements>
+		</Region>
+		<!-- End Using -->
+		<Element Type="Attribute">
+			<Sort By="Name"/>
+		</Element>
+		<!-- End Attribute -->
+		<ElementRef Id="DefaultInterface"/>
+		<ElementRef Id="DefaultType"/>
+		<Element Type="Namespace">
+			<Sort By="Name"/>
+			<Elements>
+				<Element Type="Using">
+					<Group By="Name" AttributeCapture="^(.*?)(\.|$)" SeparatorType="NewLine"/>
+					<Sort By="Name"/>
+				</Element>
+				<Region Name="Enumerations">
+					<Elements>
+						<Element Type="Type">
+							<Sort By="Name"/>
+							<Filter Condition="$(Type) == 'Enum'"/>
+						</Element>
+					</Elements>
+				</Region>
+				<Region Name="Delegates">
+					<Elements>
+						<Element Type="Delegate">
+							<Sort By="Name"/>
+						</Element>
+					</Elements>
+				</Region>
+				<Element Id="DefaultInterface" Type="Type">
+					<!-- Interfaces only -->
+					<Sort By="Access">
+						<Sort By="Name"/>
+					</Sort>
+					<Filter Condition="$(Type) == 'Interface'"/>
+					<Elements>
+						<Region Name="Properties">
+							<Elements>
+								<Element Type="Property">
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Methods">
+							<Elements>
+								<Element Type="Method">
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Events">
+							<Elements>
+								<Element Type="Event">
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Other">
+							<Elements>
+								<Element>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+					</Elements>
+				</Element>
+				<!-- End Interface -->
+				<Element Id="DefaultType" Type="Type">
+					<!-- Classes and structures -->
+					<Sort By="Access">
+						<Sort By="Name"/>
+					</Sort>
+					<Elements>
+						<Region Name="Constants">
+							<Elements>
+								<Element Type="Field">
+									<Filter Condition="$(Modifier) : 'Constant'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Static Fields">
+							<Elements>
+								<Element Type="Field">
+									<Filter Condition="$(Modifier) : 'Static'"/>
+									<!-- Do not sort statics due to dependencies among fields -->
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Fields">
+							<Elements>
+								<Element Type="Field">
+									<Group By="Access" SeparatorType="NewLine"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Constructors">
+							<Elements>
+								<Element Type="Constructor">
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Private Properties">
+							<Elements>
+								<Element Type="Property">
+									<Filter Condition="$(Access) == 'Private'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Protected Properties">
+							<Elements>
+								<Element Type="Property">
+									<Filter Condition="$(Access) == 'Protected'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Internal Properties">
+							<Elements>
+								<Element Type="Property">
+									<Filter Condition="$(Access) : 'Internal'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Public Properties">
+							<Elements>
+								<Element Type="Property">
+									<Filter Condition="$(Access) == 'Public'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Private Methods">
+							<Elements>
+								<Element Type="Method">
+									<Filter Condition="$(Access) == 'Private'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Protected Methods">
+							<Elements>
+								<Element Type="Method">
+									<Filter Condition="$(Access) == 'Protected'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Internal Methods">
+							<Elements>
+								<Element Type="Method">
+									<Filter Condition="$(Access) : 'Internal'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Public Methods">
+							<Elements>
+								<Element Type="Method">
+									<Filter Condition="$(Access) == 'Public'"/>
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Events">
+							<Elements>
+								<Element Type="Event">
+									<Sort By="Name"/>
+								</Element>
+							</Elements>
+						</Region>
+						<Region Name="Other">
+							<Elements>
+								<ElementRef Id="DefaultInterface"/>
+								<ElementRef Id="DefaultType"/>
+								<Element>
+									<Sort By="Name"/>
+									<Elements>
+										<Element/>
+									</Elements>
+								</Element>
+							</Elements>
+						</Region>
+					</Elements>
+				</Element>
+				<!-- End Type -->
+			</Elements>
+		</Element>
+		<!-- End Namespace -->
+	</Elements>
+</CodeConfiguration>

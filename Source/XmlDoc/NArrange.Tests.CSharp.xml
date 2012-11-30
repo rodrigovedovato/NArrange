@@ -1,0 +1,1252 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NArrange.Tests.CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:NArrange.Tests.Core.CodeArrangerTests">
+            <summary>
+            Test fixture for the CodeArranger class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.CodeArrangerTests._testElements">
+            <summary>
+            Set of test elements for arranging.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.ArrangeNestedRegionTest">
+            <summary>
+            Tests arrangement with nested regions.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.ArrangeStaticFieldsTest">
+            <summary>
+            Tests arranging static fields with and without dependencies.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.CreateWithNullTest">
+            <summary>
+            Test the construction with a null configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeConditionDirectiveTest">
+            <summary>
+            Tests arranging a condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeEnumerationTest">
+            <summary>
+            Tests arranging an enumeration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeNestedClassTest">
+            <summary>
+            Tests arranging a nested class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeNoUsingMoveTest">
+            <summary>
+            Tests arranging with the default configuration except moving using directivesNo.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeSimpleClassTest">
+            <summary>
+            Tests arranging a simple class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeStructLayoutTest">
+            <summary>
+            Tests arranging a structure with the StructLayout attribute.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeTest">
+            <summary>
+            Tests arranging with the default configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.DefaultArrangeUsingsInRegionTest">
+            <summary>
+            Tests arranging using statements in a region with the default configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.MoveUsingsBasicTest">
+            <summary>
+            Tests moving usings to the namespace level.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.MoveUsingsToFileTest">
+            <summary>
+            Tests moving usings to the file level.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.MoveUsingsToNamespaceTest">
+            <summary>
+            Tests moving usings to the namespace level.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.CodeArrangerTests.TestFixtureSetup">
+            <summary>
+            Performs setup for this test fixture.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpSymbolTests">
+            <summary>
+            Test fixture for the CSharpSymbol class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpSymbolTests.IsCSharpSymbolTest">
+            <summary>
+            Tests the IsCSharpSymbol method.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpWriteArrangedTests">
+            <summary>
+            Test fixture for parsing, arranging and writing C# test source code files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriteArrangedTests.Compile(System.String,System.String)">
+            <summary>
+            Compiles source code text to the specified assembly.
+            </summary>
+            <param name="text">Text to compile.</param>
+            <param name="assemblyName">Output assembly name.</param>
+            <returns>Compiler results.</returns>
+        </member>
+        <member name="P:NArrange.Tests.CSharp.CSharpWriteArrangedTests.ValidTestFiles">
+            <summary>
+            Gets a list of valid test files.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.FileArrangerTests">
+            <summary>
+            Test fixture for the FileArranger class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testFilteredFile">
+            <summary>
+            Test filtered file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testFilteredProjectFile">
+            <summary>
+            Test filtered project file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testInvalidExtensionFile">
+            <summary>
+            Test invalid extension file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testInvalidSourceFile">
+            <summary>
+            Test invalid source file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testProjectFile">
+            <summary>
+            Test project file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testSolutionFile">
+            <summary>
+            Test solution file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testUTF8File">
+            <summary>
+            Test UTF8 encoding file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testValidSourceFile1">
+            <summary>
+            Test valid source file name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.Core.FileArrangerTests._testValidSourceFile2">
+            <summary>
+            Test valid source file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeDirectoryTest">
+            <summary>
+            Tests arranging all files in a directory.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeEmptyProjectTest">
+            <summary>
+            Tests arranging an empty project file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeInvalidConfigurationTest">
+            <summary>
+            Tests arranging a single source file with an invalid configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeInvalidExtensionAssemblyTest">
+            <summary>
+            Tests arranging a single source file with an invalid configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeInvalidExtensionTest">
+            <summary>
+            Tests arranging a single source file with an invalid extension.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeInvalidSourceFileTest">
+            <summary>
+            Tests arranging a single invalid source file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeNonExistantConfigurationTest">
+            <summary>
+            Tests arranging a single source file with an invalid configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeProjectFilteredTest">
+            <summary>
+            Tests arranging a project file that is excluded in the configuration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeProjectTest">
+            <summary>
+            Tests arranging a project file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeReadOnlySourceFileTest">
+            <summary>
+            Tests arranging a read-only source file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeSingleSourceFileTest">
+            <summary>
+            Tests arranging a single source file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeSolutionTest">
+            <summary>
+            Tests arranging a solution file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.ArrangeUTF8EncodedSourceFileTest">
+            <summary>
+            Tests arranging a UTF8 encoded source file.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.TestSetup">
+            <summary>
+            Performs test setup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.TestTearDown">
+            <summary>
+            Performs test fixture cleanup.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.FileArrangerTests.GetTestFileContents(System.String,System.Text.Encoding)">
+            <summary>
+            Gets the test file contents.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="encoding">The encoding.</param>
+            <returns>Test file contents as text.</returns>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpParserTests">
+            <summary>
+            Test fixture for the CSharpParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.ConstructorRegionIndex">
+            <summary>
+            Constructor region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.DelegateRegionIndex">
+            <summary>
+            Delegate region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.EventRegionIndex">
+            <summary>
+            Event region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.FieldRegionIndex">
+            <summary>
+            Field region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.MethodRegionIndex">
+            <summary>
+            Method region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.NestedTypeRegionIndex">
+            <summary>
+            Nested type region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpParserTests.PropertyRegionIndex">
+            <summary>
+            Property region index in ClassMembers.cs.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ExpectedBlockCloseTest">
+            <summary>
+            Tests that when the end of a block is expected, the appropriate
+            error is thrown.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ExpectedFieldEndOfStatementTest">
+            <summary>
+            Tests that when an initial value is expected, the appropriate
+            error is thrown.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ExpectedFieldInitialValueTest">
+            <summary>
+            Tests that when an initial value is expected, the appropriate
+            error is thrown.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseArrayMultidimensionReturnTypeTest">
+            <summary>
+            Tests parsing a property with a multidimension array return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseArrayReturnTypeTest">
+            <summary>
+            Tests parsing a property with an array return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAssemblyAttributesTest">
+            <summary>
+            Tests the parsing of assembly attributes.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAttributeCloseExpectedTest">
+            <summary>
+            Tests parsing an attribute where the closing is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAttributeCommentedTest">
+            <summary>
+            Tests parsing an attribute with intermixed comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAttributeListTest">
+            <summary>
+            Tests parsing an attribute list.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAttributeTest">
+            <summary>
+            Tests parsing an attribute.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseAttributeWithAttributeCharacterTest">
+            <summary>
+            Tests parsing an attribute that contains an attribute
+            character in a string.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseBodyEscapedStringTest">
+            <summary>
+            Tests parsing a member body that has complex escaped strings.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single class
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassEmptyParameterConstraintListTest">
+            <summary>
+            Tests parsing a class with an empty parameter constraint list.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassExpectedTypeImplementsTest">
+            <summary>
+            Tests parsing a class where a type implementation specification is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassExpectedTypeParameterConstraintTest">
+            <summary>
+            Tests parsing a class where a type parameter constraint is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassImplementsGenericTest">
+            <summary>
+            Tests parsing a class that implements a generic interface.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassInvalidNewConstraintTest">
+            <summary>
+            Tests parsing a class with an invalid New type parameter constraint.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassMissingEndregionTest">
+            <summary>
+            Tests parsing a class with a missing endregion tag.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassMissingRegionNameTest">
+            <summary>
+            Tests parsing a class with an empty region name (regions do not have to have a name)
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassNewConstraintOrderTest">
+            <summary>
+            Tests parsing a class where the new() constraint is not the last 
+            type parameter constraint.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassPartialUnspecifiedAccessTest">
+            <summary>
+            Tests parsing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassSimpleTest">
+            <summary>
+            Tests parsing a simple class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnclosedTypeParameterConstraintTest">
+            <summary>
+            Tests parsing a class with an unclosed type parameter constraint.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnclosedTypeParameterTest">
+            <summary>
+            Tests parsing a class with an unclosed type parameter.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnhandledElementTest1">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnhandledElementTest2">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnhandledElementTest3">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnknownTypeParameterTest">
+            <summary>
+            Tests parsing a class with an unknown type parameter constraint.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseClassUnspecifiedAccessTest">
+            <summary>
+            Tests parsing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseCommentBlockTest">
+            <summary>
+            Tests parsing a comment block.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseCommentedMemberTest">
+            <summary>
+            Tests parsing a commented member.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseCommentLineTest">
+            <summary>
+            Tests parsing a single comment line.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveAttributeUnhandledTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveElseIfTest">
+            <summary>
+            Tests parsing a condition directive with an else if condition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveElseTest">
+            <summary>
+            Tests parsing a condition directive with an else condition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveMissingConditionTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveNestedMissingEndTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveNestedRegionTest">
+            <summary>
+            Tests parsing a condition directive with a nested region.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveNestedTest">
+            <summary>
+            Tests parsing a nested condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveNestedWithChildTest">
+            <summary>
+            Tests parsing a nested condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveSimpleTest">
+            <summary>
+            Tests parsing a simple condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConditionDirectiveUnhandledTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorBaseReferenceTest">
+            <summary>
+            Tests parsing a constructor with constructor reference.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorParametersTest">
+            <summary>
+            Tests parsing a constructor with parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorReferenceExpectedParamsTest">
+            <summary>
+            Tests parsing a constructor with constructor reference.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorReferenceTest">
+            <summary>
+            Tests parsing a constructor with constructor reference.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorsTest">
+            <summary>
+            Verifies the parsing of constructor members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseConstructorTest">
+            <summary>
+            Tests parsing a constructor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseDelegateGenericTest">
+            <summary>
+            Tests parsing a generic delegate.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseDelegatesTest">
+            <summary>
+            Verifies the parsing of delegates from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseEnumTest">
+            <summary>
+            Tests parsing an enum.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseEnumTypeTest">
+            <summary>
+            Tests parsing an enum with a type specified.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseEventGenericTest">
+            <summary>
+            Verifies the parsing of events with generic type signatures.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseEventsTest">
+            <summary>
+            Verifies the parsing of events from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldFixedTest">
+            <summary>
+            Tests parsing a fixed field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldGenericTest">
+            <summary>
+            Tests parsing a generic field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldInstanceTest">
+            <summary>
+            Tests parsing a simple field that instantiates an object.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldMultiInitialValueTest">
+            <summary>
+            Tests parsing multiple fields with an initial value from a single statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldMultiTest">
+            <summary>
+            Tests parsing multiple fields from a single statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldSimpleTest">
+            <summary>
+            Tests parsing a simple field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldsTest">
+            <summary>
+            Verifies the parsing of field members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldTrailingBlockCommentTest">
+            <summary>
+            Tests parsing a field with a trailing block comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldTrailingCommentTest">
+            <summary>
+            Tests parsing a field with a trailing comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldVolatileTest">
+            <summary>
+            Tests parsing a volatile field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldWithCharInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value that contains
+            character symbols.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldWithInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseFieldWithNestedCharInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value that contains
+            character symbols.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseHeaderCommentsBlockTest">
+            <summary>
+            Tests parsing header comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseHeaderCommentsTest">
+            <summary>
+            Tests parsing header comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseHeaderCommentsXmlTest">
+            <summary>
+            Tests parsing header comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseInterfaceDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single interface
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseInterfaceEventTest">
+            <summary>
+            Tests parsing an event from an interface.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseInvalidTypeDefinitionTest">
+            <summary>
+            Tests parsing an invalid type definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMembersCountTest">
+            <summary>
+            Verifies that the correct number of members are parsed from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodBodyUnexpectedEndOfFileTest">
+            <summary>
+            Tests parsing a method without a closing brace.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodGenericReturnTypeTest">
+            <summary>
+            Tests parsing a method with a generic return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodNullableReturnTypeTest">
+            <summary>
+            Tests parsing a method with a nullable return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodPartialDeclarationTest">
+            <summary>
+            Tests parsing a partial method declaration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodPartialImplementationTest">
+            <summary>
+            Tests parsing a partial method implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodsTest">
+            <summary>
+            Verifies the parsing of methods from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodTest">
+            <summary>
+            Tests parsing a method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodWithBlockCharBlockCommentTest">
+            <summary>
+            Tests parsing a method with a block character in a comment of the 
+            body text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodWithBlockCharLineCommentTest">
+            <summary>
+            Tests parsing a method with a block character in a comment of the 
+            body text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMethodWithBlockCharTest">
+            <summary>
+            Tests parsing a method with a block character in the body text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMultiClassDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a multiple class
+            definitions.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseMultipleNamespaceTest">
+            <summary>
+            Tests the parsing of multiple namespaces.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseNamespaceExpectedBlockEnd">
+            <summary>
+            Tests parsing of a namepsace where a closing 
+            brace is expected.";
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseNamespaceExpectedBlockStart">
+            <summary>
+            Tests parsing of a namepsace where an opening 
+            brace is expected.";
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseNestedTypesTest">
+            <summary>
+            Verifies the parsing of nested types from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseNullStreamTest">
+            <summary>
+            Tests parsing a null stream.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseOperatorsTest">
+            <summary>
+            Verifies the parsing of operators.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParsePropertiesTest">
+            <summary>
+            Verifies the parsing of properties members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParsePropertyIndexerTest">
+            <summary>
+            Tests parsing an indexer property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseRegionCommentDirectiveMismatchedTest">
+            <summary>
+            Tests parsing unmatched nested regions that use comment directives.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseRegionCommentDirectiveTest">
+            <summary>
+            Tests parsing nested regions that use comment directives.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseRegionCommentsTest">
+            <summary>
+            Tests comment scenarios with region preprocessor directives. 
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseRegionNestedTest">
+            <summary>
+            Tests parsing nested regions.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseRegionUnmatchedEndDirectiveTest">
+            <summary>
+            Tests an unmatched end region directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseSingleNamespaceTest">
+            <summary>
+            Tests the parsing of a single namespace.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseStructDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single structure
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUnhandledPreprocessorTest">
+            <summary>
+            Tests parsing a non-region preprocessor directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUnkownKeywordTest">
+            <summary>
+            Tests parsing an unrecognized keyword.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingEmptyNamespaceTest">
+            <summary>
+            Tests parsing an empty using statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingEmptyTypeOrNamespaceTest">
+            <summary>
+            Tests parsing an empty using statement with a redefine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingExpectedStatementEnd">
+            <summary>
+            Tests parsing a using statement where an end 
+            of statement is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingRedefineGenericTest">
+            <summary>
+            Tests parsing a using statement that redefines a class to a generic type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingRedefineTest">
+            <summary>
+            Tests parsing a using statement that redefines a class/namespace.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUsingTest">
+            <summary>
+            Tests parsing a simple using statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.ParseUTF8Test">
+            <summary>
+            Tests parsing a file with alternative encoding.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpParserTests.GetMembersTestClass(System.IO.TextReader)">
+            <summary>
+            Gets the ClassMembers test class.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>Type code element.</returns>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpTestFile">
+            <summary>
+            C# test file information.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpTestFile._compiledSourceFiles">
+            <summary>
+            Cache of compiled test source files.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpTestFile._assembly">
+            <summary>
+            Assembly name.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.CSharp.CSharpTestFile._resourceName">
+            <summary>
+            Resource file name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.#ctor(System.String)">
+            <summary>
+            Creates a new test file using the specified resource.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.Compile(System.String,System.String)">
+            <summary>
+            Compiles C# source code.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="name">The assembly name.</param>
+            <returns>Compiler results.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.GetTestFileReader(System.String)">
+            <summary>
+            Retrieves a reader for the specified resource.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>The test file text reader.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.GetTestFileStream(System.String)">
+            <summary>
+            Opens a test file resource stream.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>Steam for the test file resource.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.GetReader">
+            <summary>
+            Gets a TextReader for this test file.
+            </summary>
+            <returns>The TextReader.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestFile.GetAssembly(System.String)">
+            <summary>
+            Gets the assembly.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>The assembly for the resource.</returns>
+        </member>
+        <member name="P:NArrange.Tests.CSharp.CSharpTestFile.Assembly">
+            <summary>
+            Gets the assembly associated with the test file.
+            </summary>
+        </member>
+        <member name="P:NArrange.Tests.CSharp.CSharpTestFile.Name">
+            <summary>
+            Gets the name of the test file.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpTestUtilities">
+            <summary>
+            CSharp test utilities.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetAssemblyAttributesFile">
+            <summary>
+            Assembly attributes test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetClassAttributesFile">
+            <summary>
+            Class attributes test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetClassDefinitionFile">
+            <summary>
+            Class definition test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetClassMembersFile">
+            <summary>
+            Class members test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetInterfaceDefinitionFile">
+            <summary>
+            Interface definition test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetMultiClassDefinitionFile">
+            <summary>
+            Multiple class definition test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetMultipleNamespaceFile">
+            <summary>
+            Multiple namespace test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetOperatorsFile">
+            <summary>
+            Operators test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetSingleNamespaceFile">
+            <summary>
+            Single namespace test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetStructDefinitionFile">
+            <summary>
+            Structure definition test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpTestUtilities.GetUTF8File">
+            <summary>
+            UTF8 test file.
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="T:NArrange.Tests.CSharp.CSharpWriterTests">
+            <summary>
+            Test fixture for the CSharpWriter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.ClosingCommentsTest">
+            <summary>
+            Tests writing an element with closing comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.ConsecutiveBlankLineTest">
+            <summary>
+            Tests removal of consecutive blank lines.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.TabStyleTest">
+            <summary>
+            Tests writing an element with different tab styles.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteAttributeElementListTest">
+            <summary>
+            Tests writing an attribute element with a list of children.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteAttributeElementTest">
+            <summary>
+            Tests writing an attribute element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteClassDefinitionGenericTest">
+            <summary>
+            Tests writing a generic class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteClassDefinitionPartialTest">
+            <summary>
+            Tests writing a partial class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteClassDefinitionTest">
+            <summary>
+            Tests writing a class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteClassDefinitionWithRegionsTest">
+            <summary>
+            Tests writing a class with regions.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteClassUnspecifiedAccessTest">
+            <summary>
+            Tests writing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteConditionDirectiveTest">
+            <summary>
+            Tests writing a condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteConditionDirectiveWithChildrenTest">
+            <summary>
+            Tests writing a condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteConstructorReferenceTest">
+            <summary>
+            Tests writing a constructor with a constructor reference.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteConstructorTest">
+            <summary>
+            Tests writing a constructor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteDelegateGenericTest">
+            <summary>
+            Tests writing a generic delegate.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteDelegateTest">
+            <summary>
+            Tests writing a delegate.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteEventTest">
+            <summary>
+            Tests writing an event.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldFixedTest">
+            <summary>
+            Tests writing a fixed field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldGenericTest">
+            <summary>
+            Tests writing a generic field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldMultilineInitialValueNewLineTest">
+            <summary>
+            Tests writing a field that's whose intial value has multiple lines.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldMultilineInitialValueSameLineTest">
+            <summary>
+            Tests writing a field that's whose intial value has multiple lines.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldNewConstantTest">
+            <summary>
+            Tests writing a new constant field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldTest">
+            <summary>
+            Tests writing a field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldTrailingBlockCommentTest">
+            <summary>
+            Tests writing a field with a trailing block comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldTrailingCommentTest">
+            <summary>
+            Tests writing a field with a trailing comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteFieldVolatileTest">
+            <summary>
+            Tests writing a volatile field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteGroupNestedTest">
+            <summary>
+            Tests writing a group of elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteGroupTest">
+            <summary>
+            Tests writing a group of elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteInterfaceDefinitionTest">
+            <summary>
+            Tests writing an interface definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodAbstractTest">
+            <summary>
+            Tests writing an abstract method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodGenericReturnTypeTest">
+            <summary>
+            Tests writing a method with a generic return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodPartialDeclarationTest">
+            <summary>
+            Tests writing a partial method declaration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodPartialImplementationTest">
+            <summary>
+            Tests writing a partial method implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodSealedTest">
+            <summary>
+            Tests writing a sealed method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteMethodTest">
+            <summary>
+            Tests writing a method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteOperatorExplicitTest">
+            <summary>
+            Tests writing an explicit operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteOperatorImplicitTest">
+            <summary>
+            Tests writing an implicit operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteOperatorTest">
+            <summary>
+            Tests writing an operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteRegionCommentDirectiveTest">
+            <summary>
+            Tests writing a region with comment directives.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteRegionEndRegionNameTest">
+            <summary>
+            Tests writing a region with and without end region names enabled.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteRegionNoDirectiveTest">
+            <summary>
+            Tests writing a region with no directives.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteUsingElementRedefineTest">
+            <summary>
+            Tests writing a using element with a redefine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.CSharp.CSharpWriterTests.WriteUsingElementTest">
+            <summary>
+            Tests writing a using element.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.Core.SourceHandlerTests">
+            <summary>
+            Test fixture for the SourceHandler class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SourceHandlerTests.CreateTest">
+            <summary>
+            Tests creating a new extension handler.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.Core.SourceHandlerTests.CreateWithNullConfigurationTest">
+            <summary>
+            Tests creating with a null configuration.
+            </summary>
+        </member>
+    </members>
+</doc>

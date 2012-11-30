@@ -1,0 +1,122 @@
+#region Header
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Copyright (c) 2007-2008 James Nies and NArrange contributors.
+ *    All rights reserved.
+ *
+ * This program and the accompanying materials are made available under
+ * the terms of the Common Public License v1.0 which accompanies this
+ * distribution.
+ *
+ * Redistribution and use in source and binary forms, with or
+ * without modification, are permitted provided that the following
+ * conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in
+ * the documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *<author>James Nies</author>
+ *<contributor>Justin Dearing</contributor>
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#endregion Header
+
+namespace NArrange.Core
+{
+    using System;
+    using System.Threading;
+
+    /// <summary>
+    /// Exception thrown by parsers.
+    /// </summary>
+    public sealed class ParseException : Exception
+    {
+        #region Fields
+
+        /// <summary>
+        /// Character position at which the error occurred.
+        /// </summary>
+        private readonly int _column;
+
+        /// <summary>
+        /// Line number at which the error occurred.
+        /// </summary>
+        private readonly int _lineNumber;
+
+        #endregion Fields
+
+        #region Constructors
+
+        /// <summary>
+        /// Creates a new ParseException.
+        /// </summary>
+        /// <param name="message">Message text.</param>
+        /// <param name="lineNumber">Line number.</param>
+        /// <param name="column">Line position.</param>
+        public ParseException(string message, int lineNumber, int column)
+            : base(message)
+        {
+            _lineNumber = lineNumber;
+            _column = column;
+        }
+
+        #endregion Constructors
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the character position of the parse error.
+        /// </summary>
+        public int Column
+        {
+            get
+            {
+                return _column;
+            }
+        }
+
+        /// <summary>
+        /// Gets the line number.
+        /// </summary>
+        public int LineNumber
+        {
+            get
+            {
+                return _lineNumber;
+            }
+        }
+
+        /// <summary>
+        /// Gets the exception message.
+        /// </summary>
+        public override string Message
+        {
+            get
+            {
+                return string.Format(
+                    Thread.CurrentThread.CurrentCulture,
+                    "{0}: Line {1}, Column {2}",
+                    base.Message,
+                    LineNumber,
+                    Column);
+            }
+        }
+
+        #endregion Properties
+    }
+}

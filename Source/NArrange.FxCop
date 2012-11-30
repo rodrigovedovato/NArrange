@@ -1,0 +1,1081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.36" Name="NArrange FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.36\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.CSharp.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.Gui.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.VisualBasic.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.36">
+  <Namespaces>
+   <Namespace Name="NArrange.Gui">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2008-07-18 03:59:39Z">
+      <Issue>
+       <Item>NArrange.Gui</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.Core.dll">
+    <Modules>
+     <Module Name="narrange.core.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2008-07-18 03:59:39Z">
+        <Issue Name="NoStrongName">
+         <Item>'NArrange.Core.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="NArrange.Core">
+        <Types>
+         <Type Name="BackupUtilities">
+          <Members>
+           <Member Name="#TryDeleteDirectory(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'BackupUtilities.TryDeleteDirectory(string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CodeParser">
+          <Members>
+           <Member Name="#DoParseElements()">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'List&lt;ICodeElement&gt;'</Item>
+               <Item>'CodeParser.DoParseElements()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#WhiteSpaceCharacters">
+            <Messages>
+             <Message TypeName="ArrayFieldsShouldNotBeReadOnly" Category="Microsoft.Security" CheckId="CA2105" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'CodeParser.WhiteSpaceCharacters'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CodeWriteVisitor">
+          <Members>
+           <Member Name="#WriteClosingComment(NArrange.Core.CodeElements.TextCodeElement,System.String)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'element'</Item>
+               <Item>'CodeWriteVisitor.WriteClosingComment(TextCodeElement, string)'</Item>
+               <Item>'TextCodeElement'</Item>
+               <Item>'CodeElement'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FileArranger">
+          <Members>
+           <Member Name="#GetConfigurationLoadError(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'FileArranger.GetConfigurationLoadError(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#WriteFiles(System.String,System.Boolean)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'FileArranger.WriteFiles(string, bool)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ParseException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2008-07-18 03:59:39Z">
+            <Issue Name="MissingConstructor">
+             <Item>'ParseException'</Item>
+             <Item>private ParseException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'ParseException'</Item>
+             <Item>public ParseException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'ParseException'</Item>
+             <Item>public ParseException(String)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'ParseException'</Item>
+             <Item>public ParseException(String, Exception)</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2008-07-18 03:59:39Z">
+            <Issue Certainty="95" Level="Error">
+             <Item>'ParseException'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="RegionedInserter">
+          <Messages>
+           <Message Id="Regioned" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-07-18 03:59:39Z">
+            <Issue Name="Type">
+             <Item>Regioned</Item>
+             <Item>'RegionedInserter'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="SortedInserter">
+          <Members>
+           <Member Name="#CreateComparison(NArrange.Core.Configuration.SortBy)">
+            <Messages>
+             <Message Id="System.String.CompareTo(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'SortedInserter.CreateComparison(SortBy)'</Item>
+               <Item>'string.CompareTo(string)'</Item>
+               <Item>'string.Compare(string, string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="NArrange.Core.CodeElements">
+        <Types>
+         <Type Name="AttributedElement">
+          <Members>
+           <Member Name="#BaseAttributes">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'List&lt;IAttributeElement&gt;'</Item>
+               <Item>'AttributedElement.BaseAttributes'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CodeElement">
+          <Members>
+           <Member Name="#BaseChildren">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'List&lt;ICodeElement&gt;'</Item>
+               <Item>'CodeElement.BaseChildren'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CommentedElement">
+          <Members>
+           <Member Name="#BaseHeaderComments">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'List&lt;ICommentElement&gt;'</Item>
+               <Item>'CommentedElement.BaseHeaderComments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ElementUtilities">
+          <Members>
+           <Member Name="#Format(System.String,NArrange.Core.CodeElements.ICodeElement)">
+            <Messages>
+             <Message Id="0#" TypeName="ParameterNamesShouldNotMatchMemberNames" Category="Microsoft.Naming" CheckId="CA1719" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'format'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FileUtilities">
+          <Members>
+           <Member Name="#GetAttribute(NArrange.Core.FileAttributeType,System.IO.FileInfo)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'file'</Item>
+               <Item>'FileUtilities.GetAttribute(FileAttributeType, FileInfo)'</Item>
+               <Item>'FileInfo'</Item>
+               <Item>'FileSystemInfo'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetEncoding(System.String)">
+            <Messages>
+             <Message Id="filename" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2008-07-18 03:59:39Z">
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'FileUtilities.GetEncoding(string)'</Item>
+               <Item>filename</Item>
+               <Item>'filename'</Item>
+               <Item>fileName</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="InterfaceMemberElement">
+          <Members>
+           <Member Name="#ImplementsBase">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'List&lt;InterfaceReference&gt;'</Item>
+               <Item>'InterfaceMemberElement.ImplementsBase'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MemberElement">
+          <Members>
+           <Member Name="#Type">
+            <Messages>
+             <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue Name="BaseType">
+               <Item>'MemberElement.Type'</Item>
+               <Item>'object.GetType()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TypeElement">
+          <Members>
+           <Member Name="#Type">
+            <Messages>
+             <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue Name="BaseType">
+               <Item>'TypeElement.Type'</Item>
+               <Item>'object.GetType()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="NArrange.Core.Configuration">
+        <Types>
+         <Type Name="CodeConfiguration">
+          <Members>
+           <Member Name="#ResolveReferences()">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'CodeConfiguration.ResolveReferences()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UpgradeProjectExtensions()">
+            <Messages>
+             <Message Id="System.String.Compare(System.String,System.String,System.Boolean)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'string.Compare(string, string, bool)'</Item>
+               <Item>'CodeConfiguration.UpgradeProjectExtensions()'</Item>
+               <Item>'string.Compare(string, string, bool, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.Compare(System.String,System.String,System.Boolean)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'CodeConfiguration.UpgradeProjectExtensions()'</Item>
+               <Item>'string.Compare(string, string, bool)'</Item>
+               <Item>'string.Compare(string, string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConditionExpressionParser">
+          <Members>
+           <Member Name="#Parse(System.String)">
+            <Messages>
+             <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Created="2008-07-18 03:59:39Z">
+              <Issue Name="IncorrectMessage">
+               <Item>'ConditionExpressionParser.Parse(string)'</Item>
+               <Item>expression</Item>
+               <Item>'message'</Item>
+               <Item>'ArgumentException'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="EncodingConfiguration">
+          <Members>
+           <Member Name="#DefaultCodePage">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'EncodingConfiguration.DefaultCodePage'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DetectCodePage">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'EncodingConfiguration.DetectCodePage'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetEncoding()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2008-07-18 03:59:39Z">
+              <Issue Certainty="50">
+               <Item>'EncodingConfiguration.GetEncoding()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LeafExpression">
+          <Members>
+           <Member Name="#NArrange.Core.Configuration.IConditionExpression.Left">
+            <Accessors>
+             <Accessor Name="#NArrange.Core.Configuration.IConditionExpression.get_Left()">
+              <Messages>
+               <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2008-07-18 03:59:39Z">
+                <Issue>
+                 <Item>'LeafExpression'</Item>
+                 <Item>'IConditionExpression.Left.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#NArrange.Core.Configuration.IConditionExpression.Right">
+            <Accessors>
+             <Accessor Name="#NArrange.Core.Configuration.IConditionExpression.get_Right()">
+              <Messages>
+               <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2008-07-18 03:59:39Z">
+                <Issue>
+                 <Item>'LeafExpression'</Item>
+                 <Item>'IConditionExpression.Right.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="UnaryOperatorExpression">
+          <Members>
+           <Member Name="#NArrange.Core.Configuration.IConditionExpression.Left">
+            <Accessors>
+             <Accessor Name="#NArrange.Core.Configuration.IConditionExpression.get_Left()">
+              <Messages>
+               <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2008-07-18 03:59:39Z">
+                <Issue>
+                 <Item>'UnaryOperatorExpression'</Item>
+                 <Item>'IConditionExpression.Left.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#NArrange.Core.Configuration.IConditionExpression.Right">
+            <Accessors>
+             <Accessor Name="#NArrange.Core.Configuration.IConditionExpression.get_Right()">
+              <Messages>
+               <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2008-07-18 03:59:39Z">
+                <Issue>
+                 <Item>'UnaryOperatorExpression'</Item>
+                 <Item>'IConditionExpression.Right.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.CSharp.dll">
+    <Modules>
+     <Module Name="narrange.csharp.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2008-07-18 03:59:39Z">
+        <Issue Name="NoStrongName">
+         <Item>'NArrange.CSharp.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="NArrange.CSharp">
+        <Types>
+         <Type Name="CSharpKeyword">
+          <Members>
+           <Member Name="#Elif">
+            <Messages>
+             <Message Id="Elif" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2008-07-18 03:59:39Z">
+              <Issue Name="Member">
+               <Item>Elif</Item>
+               <Item>'CSharpKeyword.Elif'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CSharpParser">
+          <Members>
+           <Member Name="#ParseRegion(System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'CSharpParser.ParseRegion(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TryParseElement(NArrange.Core.CodeElements.ICodeElement,System.Text.StringBuilder,System.Collections.ObjectModel.ReadOnlyCollection`1&lt;NArrange.Core.CodeElements.ICommentElement&gt;,System.Collections.ObjectModel.ReadOnlyCollection`1&lt;NArrange.Core.CodeElements.AttributeElement&gt;)">
+            <Messages>
+             <Message Id="parentElement" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'parentElement'</Item>
+               <Item>'CSharpParser.TryParseElement(ICodeElement, StringBuilder, ReadOnlyCollection&lt;ICommentElement&gt;, ReadOnlyCollection&lt;AttributeElement&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CSharpWriteVisitor">
+          <Members>
+           <Member Name="#VisitFieldElement(NArrange.Core.CodeElements.FieldElement)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'CSharpWriteVisitor.VisitFieldElement(FieldElement)'</Item>
+               <Item>'string.IndexOf(string)'</Item>
+               <Item>'string.IndexOf(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#WriteAccess(NArrange.Core.CodeAccess)">
+            <Messages>
+             <Message TypeName="NormalizeStringsToUppercase" Category="Microsoft.Globalization" CheckId="CA1308" Created="2008-07-18 03:59:39Z">
+              <Issue Name="ToUpperInvariant">
+               <Item>'CSharpWriteVisitor.WriteAccess(CodeAccess)'</Item>
+               <Item>'string.ToLowerInvariant()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.Gui.dll">
+    <Modules>
+     <Module Name="narrange.gui.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2008-07-18 03:59:39Z">
+        <Issue Name="NoStrongName">
+         <Item>'NArrange.Gui.dll'</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2008-07-18 03:59:39Z">
+        <Issue>
+         <Item>'NArrange.Gui.dll'</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Created="2008-07-18 03:59:39Z">
+        <Issue>
+         <Item>'NArrange.Gui.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="NArrange.Gui.Configuration">
+        <Types>
+         <Type Name="ConfigurationEditorControl">
+          <Members>
+           <Member Name="#CreateListPropertyNode(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ConfigurationEditorControl.CreateListPropertyNode(PropertyDescriptor, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InitializeComponent()">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorControl.InitializeComponent()'</Item>
+               <Item>'PropertyGrid.PropertyValueChanged.add(PropertyValueChangedEventHandler)'</Item>
+               <Item>&#xD;&#xA;   -&gt;'ConfigurationEditorControl.InitializeComponent()'&#xD;&#xA;   -&gt;'ConfigurationEditorControl.InitializeComponent()'&#xD;&#xA;   -&gt;'ConfigurationEditorControl.ConfigurationEditorControl()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RefreshConfiguration()">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorControl.RefreshConfiguration()'</Item>
+               <Item>'PropertyGrid.SelectedObject.set(object)'</Item>
+               <Item>&#xD;&#xA;   -&gt;'ConfigurationEditorControl.RefreshConfiguration()'&#xD;&#xA;   -&gt;'ConfigurationEditorControl.RefreshConfiguration()'&#xD;&#xA;   -&gt;'ConfigurationEditorControl.Configuration.set(CodeConfiguration)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConfigurationEditorForm">
+          <Members>
+           <Member Name="#CanSelectConfig">
+            <Accessors>
+             <Accessor Name="#get_CanSelectConfig()">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2008-07-18 03:59:39Z">
+                <Issue>
+                 <Item>'ConfigurationEditorForm.CanSelectConfig.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#CreateConfiguration(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.CreateConfiguration(string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.CreateConfiguration(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadConfiguration(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.LoadConfiguration(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.LoadConfiguration(string)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'ConfigurationEditorForm.LoadConfiguration(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveConfiguration(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.SaveConfiguration(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationEditorForm.SaveConfiguration(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConfigurationElementCollectionEditor">
+          <Members>
+           <Member Name="#ItemTypes">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'ConfigurationElementCollectionEditor.ItemTypes'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ListItemTreeNode">
+          <Messages>
+           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2008-07-18 03:59:39Z">
+            <Issue>
+             <Item>'ListItemTreeNode'</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2008-07-18 03:59:39Z" FixCategory="DependsOnFix">
+            <Issue Name="DependsOnFix">
+             <Item>'ListItemTreeNode'</Item>
+             <Item>'ContextMenuStrip', 'ToolStripMenuItem'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="ListPropertyTreeNode">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2008-07-18 03:59:39Z" FixCategory="DependsOnFix">
+            <Issue Name="DependsOnFix">
+             <Item>'ListPropertyTreeNode'</Item>
+             <Item>'ContextMenuStrip', 'ToolStripMenuItem'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#GetDisplayName(System.Type)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2008-07-18 03:59:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ListPropertyTreeNode.GetDisplayName(Type)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PropertyTreeNode">
+          <Messages>
+           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2008-07-18 03:59:39Z">
+            <Issue>
+             <Item>'PropertyTreeNode'</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2008-07-18 03:59:39Z" FixCategory="DependsOnFix">
+            <Issue Name="DependsOnFix">
+             <Item>'PropertyTreeNode'</Item>
+             <Item>'ContextMenuStrip', 'ToolStripMenuItem'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'PropertyTreeNode.PropertyTreeNode(PropertyDescriptor, object)'</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;PropertyTreeNode..ctor(PropertyDescriptor, Object)&#xD;&#xA;TreeNode.set_Text(String):Void&#xD;&#xA;PropertyTreeNode.Initialize():Void&#xD;&#xA;TreeNode.set_ContextMenuStrip(ContextMenuStrip):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Build/NArrange/bin/NArrange.VisualBasic.dll">
+    <Modules>
+     <Module Name="narrange.visualbasic.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2008-07-18 03:59:39Z">
+        <Issue Name="NoStrongName">
+         <Item>'NArrange.VisualBasic.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="NArrange.VisualBasic">
+        <Types>
+         <Type Name="VBKeyword">
+          <Members>
+           <Member Name="#CreateNormalizedKeywordDictionary()">
+            <Messages>
+             <Message Id="System.String.ToUpper" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'string.ToUpper()'</Item>
+               <Item>'VBKeyword.CreateNormalizedKeywordDictionary()'</Item>
+               <Item>'string.ToUpper(CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Normalize(System.String)">
+            <Messages>
+             <Message Id="System.Char.ToUpper(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToUpper(char)'</Item>
+               <Item>'VBKeyword.Normalize(string)'</Item>
+               <Item>'char.ToUpper(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="VBParser">
+          <Members>
+           <Member Name="#CaptureWord(System.Boolean)">
+            <Messages>
+             <Message Id="System.Char.ToLower(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.CaptureWord(bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.CaptureWord(bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.CaptureWord(bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.CaptureWord(bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EatWord(System.String,System.String)">
+            <Messages>
+             <Message Id="System.Char.ToLower(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.EatWord(string, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.EatWord(string, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ParseBlock(System.String)">
+            <Messages>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'VBParser.ParseBlock(string)'</Item>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ParseMethod(NArrange.Core.CodeAccess,NArrange.Core.MemberModifiers,System.Boolean,System.Boolean,System.Boolean,NArrange.Core.OperatorType,System.Boolean,System.Boolean,System.String)">
+            <Messages>
+             <Message Id="System.Char.ToLower(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseMethod(CodeAccess, MemberModifiers, bool, bool, bool, OperatorType, bool, bool, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseMethod(CodeAccess, MemberModifiers, bool, bool, bool, OperatorType, bool, bool, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseMethod(CodeAccess, MemberModifiers, bool, bool, bool, OperatorType, bool, bool, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseMethod(CodeAccess, MemberModifiers, bool, bool, bool, OperatorType, bool, bool, string)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Char.ToUpper(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToUpper(char)'</Item>
+               <Item>'VBParser.ParseMethod(CodeAccess, MemberModifiers, bool, bool, bool, OperatorType, bool, bool, string)'</Item>
+               <Item>'char.ToUpper(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ParseTypeParameters(NArrange.Core.CodeElements.IGenericElement)">
+            <Messages>
+             <Message Id="System.Char.ToLower(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseTypeParameters(IGenericElement)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseTypeParameters(IGenericElement)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseTypeParameters(IGenericElement)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.ParseTypeParameters(IGenericElement)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TryParseImplementsOrHandles(System.String[]&amp;,System.String[]&amp;,System.Boolean)">
+            <Messages>
+             <Message Id="System.Char.ToLower(System.Char)" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'char.ToLower(char)'</Item>
+               <Item>'VBParser.TryParseImplementsOrHandles(out string[], out string[], bool)'</Item>
+               <Item>'char.ToLower(char, CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="VBWriteVisitor">
+          <Members>
+           <Member Name="#VisitFieldElement(NArrange.Core.CodeElements.FieldElement)">
+            <Messages>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2008-07-18 03:59:39Z">
+              <Issue>
+               <Item>'VBWriteVisitor.VisitFieldElement(FieldElement)'</Item>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="ArrayFieldsShouldNotBeReadOnly" Category="Microsoft.Security" CheckId="CA2105">
+    <Resolution Name="Default">Either replace {0} with a strongly typed collection that cannot be changed, or replace the public field with a method that returns a clone of a private array.</Resolution>
+   </Rule>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Resolution Name="MemberParameterShouldBeCompoundWord">In member {0}, the discrete term '{1}' in parameter name {2} should be expressed as a compound word, '{3}'.</Resolution>
+   </Rule>
+   <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+    <Resolution Name="Default">Consider changing the type of parameter {0} in {1} from {2} to its base type {3}. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+    <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+    <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+    <Resolution Name="Default">{0} calls into {1} which has a LinkDemand. By making this call, {1} is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: {2}</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
+    <Resolution Name="MissingConstructor">Add the following constructor to {0}: {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208">
+    <Resolution Name="IncorrectMessage">Method {0} passes parameter name '{1}' as the {2} argument to a {3} constructor. Replace this argument with a descriptive message and pass the parameter name in the correct position.</Resolution>
+   </Rule>
+   <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+    <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+    <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+    <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+    <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
+    <Resolution Name="Default">Consider making {0} non-public or a constant.</Resolution>
+   </Rule>
+   <Rule TypeName="NormalizeStringsToUppercase" Category="Microsoft.Globalization" CheckId="CA1308">
+    <Resolution Name="ToUpperInvariant">In method {0}, replace the call to {1} with String.ToUpperInvariant().</Resolution>
+   </Rule>
+   <Rule TypeName="ParameterNamesShouldNotMatchMemberNames" Category="Microsoft.Naming" CheckId="CA1719">
+    <Resolution Name="Default">Change either member or parameter name {0} so that one differs from the other.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721">
+    <Resolution Name="BaseType">The property name {0} is confusing given the existence of inherited method {1}. Rename or remove this property.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+    <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+    <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide a StringComparison. This should be replaced with a call to {2}.</Resolution>
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

@@ -1,0 +1,198 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+  <PropertyGroup>
+    <BuildDirectory>$(MSBuildProjectDirectory)\Build</BuildDirectory>
+    <RootDirectory>$(BuildDirectory)\NArrange</RootDirectory>
+    <BinDirectory>$(RootDirectory)\bin</BinDirectory>
+    <MsiDirectory>$(RootDirectory)\msi</MsiDirectory>
+    <ReleasesDirectory>$(MSBuildProjectDirectory)\..\Releases</ReleasesDirectory>
+    <SourceDistributionDirectory>$(RootDirectory)\src</SourceDistributionDirectory>
+    <BuildAllDependsOn>Clean;SourceAnalysis;MakeSourceDistribution;Build;MakeMSIDistribution</BuildAllDependsOn>
+
+    <!-- Version -->
+    <Major>0</Major>
+    <Minor>3</Minor>
+    <Build>1</Build>
+
+    <!-- StyleCop related stuff -->
+    <StyleCopRoot>$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.3</StyleCopRoot>
+    <StyleCopSettingsFile>$(MSBuildProjectDirectory)Settings.SourceAnalysis</StyleCopSettingsFile>
+    <StyleCopForceFullAnalysis Condition="'$(SourceAnalysisForceFullAnalysis)' == ''">true</StyleCopForceFullAnalysis>
+    <StyleCopCacheResults Condition="'$(SourceAnalysisCacheResults)' == ''">false</StyleCopCacheResults>
+    <StyleCopTreatErrorsAsWarnings Condition="'$(SourceAnalysisTreatErrorsAsWarnings)' == ''">true</StyleCopTreatErrorsAsWarnings>
+    <StyleCopEnabled Condition="'$(SourceAnalysisEnabled)' == ''">true</StyleCopEnabled>
+    <StyleCopOverrideSettingsFile Condition="'$(SourceAnalysisOverrideSettingsFile)' == ''">$(SourceAnalysisSettingsFile)</StyleCopOverrideSettingsFile>
+
+    <!-- WIX related stuff -->
+    <WixToolPath Condition=" '$(WixToolPath)' == '' ">$(MSBuildProjectDirectory)\..\Tools\Wix</WixToolPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(WixToolPath)\wix.targets</WixTargetsPath>
+    <WixTasksPath Condition=" '$(WixTasksPath)' == '' ">$(WixToolPath)\WixTasks.dll</WixTasksPath>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(StyleCopRoot)\Microsoft.StyleCop.dll" TaskName="StyleCopTask"/>
+
+  <ItemGroup>
+    <Projects Include="$(MSBuildProjectDirectory)\**\*.csproj"
+              Exclude="$(MSBuildProjectDirectory)\**\*TestProject.csproj;
+                           $(BuildDirectory)\**\*.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <WixProjects Include="$(MSBuildProjectDirectory)\**\*.wixproj"
+                 Exclude="$(BuildDirectory)\**\*.wixproj"/>
+  </ItemGroup>
+
+  <Target Name="BuildAll" DependsOnTargets="$(BuildAllDependsOn)"/>
+
+  <Target Name="Clean">
+    <Message Text="Cleaning..."/>
+    <RemoveDir Directories="$(RootDirectory)"/>
+    <MakeDir Directories="$(RootDirectory)"/>
+    <MSBuild Projects="@(Projects)" Targets="Clean" Properties="Configuration=Release;"/>
+  </Target>
+
+  <Target Name="SourceAnalysis">
+    <Message Text="Running source analysis..."/>
+    <CreateItem Include="$(MSBuildProjectDirectory)\**\*.cs"
+                Exclude="$(MSBuildProjectDirectory)\**\bin\**\*.cs">
+      <Output TaskParameter="Include" ItemName="SourceAnalysisFiles" />
+    </CreateItem>
+
+    <StyleCopTask
+        ProjectFullPath="$(MSBuildProjectFile)"
+        SourceFiles="@(SourceAnalysisFiles)"
+        ForceFullAnalysis="$(StyleCopForceFullAnalysis)"
+        DefineConstants="$(DefineConstants)"
+        TreatErrorsAsWarnings="$(StyleCopTreatErrorsAsWarnings)"
+        CacheResults="$(StyleCopCacheResults)"
+        OverrideSettingsFile="$(StyleCopOverrideSettingsFile)" />
+  </Target>
+
+  <Target Name="MakeSourceDistribution">
+
+    <Message Text="Making source distribution..."/>
+
+    <MakeDir Directories="$(SourceDistributionDirectory)"/>
+    <CreateItem Include="$(MSBuildProjectDirectory)\**\*.*"
+                Exclude="$(MSBuildProjectDirectory)\**\*svn\**\*.*;
+                             $(MSBuildProjectDirectory)\**\bin\**\*.*;
+                             $(MSBuildProjectDirectory)\**\Build\**\*.*;
+                             $(MSBuildProjectDirectory)\**\obj\**\*.*;
+                             $(MSBuildProjectDirectory)\**\XmlDoc*\*.*;
+                             $(MSBuildProjectDirectory)\coverage.*;
+                             $(MSBuildProjectDirectory)\*.nprof;
+                             $(MSBuildProjectDirectory)\*.fxcop;
+                             $(MSBuildProjectDirectory)\TestResult.xml;
+                             $(MSBuildProjectDirectory)\UnitTests.*;
+                             $(MSBuildProjectDirectory)\authors.xml;
+                             $(MSBuildProjectDirectory)\svn2cl.*;
+                             $(MSBuildProjectDirectory)\changelog.bat;
+                             $(MSBuildProjectDirectory)\SourceAnalysisViolations.xml;
+                             $(MSBuildProjectDirectory)\**\*.suo;;
+                             $(MSBuildProjectDirectory)\**\*.user;
+                             $(MSBuildProjectDirectory)\**\Doc\Templates\*.*;
+                             $(MSBuildProjectDirectory)\**\Doc\_notes\*.*;
+                             $(MSBuildProjectDirectory)\**\Doc\Images\Originals\*.*">
+      <Output ItemName="SourceFiles" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Message Text="@(SourceFiles)"/>
+    <Copy SourceFiles ="@(SourceFiles)" DestinationFolder="$(SourceDistributionDirectory)\%(RecursiveDir)"/>
+
+    <CreateItem Include="$(SourceDistributionDirectory)\**\*.*">
+      <Output ItemName="ZipSourceFiles" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Zip Files="@(ZipSourceFiles)" WorkingDirectory="$(BuildDirectory)"
+         ZipFileName="$(ReleasesDirectory)\NArrange-$(Major).$(Minor).$(Build)-src.zip"/>
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="Clean">
+    <MakeDir Directories="$(BinDirectory)"/>
+
+    <Message Text="Copying dependencies..."/>
+    <CreateItem Include="$(MSBuildProjectDirectory)\Dependencies\**\*.dll">
+      <Output ItemName="Dependencies" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(Dependencies)" DestinationFolder="$(BinDirectory)"/>
+
+    <Message Text="Building projects..."/>
+    <MSBuild Projects="@(Projects)" Properties="Configuration=Release" StopOnFirstFailure="true">
+      <Output ItemName="OutputFiles" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+
+    <Message Text="Copying output files..."/>
+    <Message Text="@(OutputFiles)"/>
+    <Copy SourceFiles="@(OutputFiles)" DestinationFolder="$(BinDirectory)"/>
+
+    <CreateItem Include="%(Projects.RecursiveDir)bin\release\*.xml"
+                Exclude="%(Projects.RecursiveDir)**\nunit*.xml;
+                             %(Projects.RecursiveDir)**\TestResult.xml;
+                             %(Projects.RecursiveDir)**\coverage.xml;
+                             $(SourceDistributionDirectory)\**\*.*">
+      <Output ItemName="AdditionalFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Message Text="Copying additional files..."/>
+    <Message Text="@(AdditionalFiles)"/>
+    <Copy SourceFiles="@(AdditionalFiles)" DestinationFolder="$(BinDirectory)"/>
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\*.txt;
+                             $(MSBuildProjectDirectory)\*.rtf">
+      <Output ItemName="InfoFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(InfoFiles)" DestinationFolder="$(BuildDirectory)\NArrange\"/>
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\Doc\**\*.*"
+                Exclude="$(MSBuildProjectDirectory)\Doc\**\*svn\**\*.*;
+                             $(MSBuildProjectDirectory)\Doc\Templates\**\*.*;
+                             $(MSBuildProjectDirectory)\Doc\_notes\**\*.*;
+                             $(MSBuildProjectDirectory)\Doc\Images\Originals\**\*.*">
+      <Output ItemName="DocFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(DocFiles)" DestinationFiles="@(DocFiles->'$(BuildDirectory)\NArrange\Doc\%(RecursiveDir)%(Filename)%(Extension)')"/>
+
+    <CreateItem Include="$(BinDirectory)\**\*.*;
+                             $(BuildDirectory)\NArrange\doc\**\*.*;
+                             $(BuildDirectory)\NArrange\*.txt;
+                             $(BuildDirectory)\NArrange\*.rtf"
+                Exclude="$(BinDirectory)\**\narrange-*test*.exe;
+                             $(BinDirectory)\**\NArrange.Tests*.*;
+                             $(BinDirectory)\**\nunit.*;
+                             $(BinDirectory)\**\NArrange.Console.xml;
+                             $(BuildDirectory)\NArrange\svn2cl.*;
+                             $(BuildDirectory)\NArrange\changelog.txt">
+      <Output ItemName="ZipBinFiles" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Zip Files="@(ZipBinFiles)" WorkingDirectory="$(BuildDirectory)"
+         ZipFileName="$(ReleasesDirectory)\NArrange-$(Major).$(Minor).$(Build)-net-2.0.zip"/>
+  </Target>
+
+  <Target Name="MakeMSIDistribution" DependsOnTargets="Build">
+    <Message Text="WIX tool path: $(WixToolPath)"/>
+
+    <MakeDir Directories="$(MsiDirectory)"/>
+
+    <Message Text="Building WIX projects..."/>
+    <MSBuild Projects="@(WixProjects)"
+             Properties="DefineSolutionProperties=false;
+                             Configuration=Release;
+                             WixToolPath=$(WixToolPath);
+                             WixTargetsPath=$(WixTargetsPath);
+                             WixTasksPath=$(WixTasksPath);
+                             ProductVersion=$(Major).$(Minor).$(Build)">
+      <Output ItemName="MsiOutputFiles" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+
+    <Message Text="Copying output files..."/>
+    <Message Text="@(MsiOutputFiles)"/>
+    <Copy SourceFiles="@(MsiOutputFiles)" DestinationFolder="$(MsiDirectory)"/>
+
+    <CreateItem Include="$(MsiDirectory)\**\*.msi">
+      <Output ItemName="MsiFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(MsiFiles)" DestinationFiles="@(MsiFiles->'$(ReleasesDirectory)\NArrange-$(Major).$(Minor).$(Build)-%(Filename)%(Extension)')"/>
+
+  </Target>
+</Project>

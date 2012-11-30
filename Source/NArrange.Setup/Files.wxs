@@ -1,0 +1,76 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="NArrange $(var.ProductVersion)">
+					<Component Id="NArrange.Libs" Guid="C6D19A15-5225-449B-8E4B-EBD665BF6DA5">
+						<File Id="NArrange.Core.Lib" Name="NArrange.Core.dll" Source="$(var.NArrange.Core.TargetDir)\NArrange.Core.dll" />
+						<File Id="NArrange.CSharp.Lib" Name="NArrange.CSharp.dll" Source="$(var.NArrange.ConsoleApplication.TargetDir)\NArrange.CSharp.dll" />
+						<File Id="NArrange.VisualBasic.Lib" Name="NArrange.VisualBasic.dll" Source="$(var.NArrange.ConsoleApplication.TargetDir)\NArrange.VisualBasic.dll" />
+					</Component>
+					<Component Id="NArrange.ConsoleApplication" Guid="8A662738-B311-461C-BB56-115C77EF7725" DiskId="1">
+						<File Id="NArrange.ConsoleApplication.Executable" Name="narrange-console.exe" Source="$(var.NArrange.ConsoleApplication.TargetDir)\narrange-console.exe" />
+						<!-- Setup PATH environment variable such that multiple versions of NArrange can coexist, -->
+						<!-- with the most recent installation taking precedence." -->
+						<Environment Id="UpdateBin" Name="NARRANGE" Action="set" System="yes" Part="first" Value="[INSTALLDIR]" />
+						<Environment Id="UpdatePath" Name="PATH" Action="set" System="yes" Part="last" Permanent="yes" Value="%NARRANGE%" />
+					</Component>
+					<Component Id="NArrange.GuiConfig" Guid="9B44DB2A-B122-421E-BF64-9BED63BB6A31">
+						<File Id="NArrange.GuiConfig.Executable" Name="narrange-config.exe" Source="$(var.NArrange.GuiConfig.TargetDir)\narrange-config.exe">
+							<Shortcut Id="StartMenuNarrangeConfig" Directory="ProgramMenuDir" Name="NArrange Configuration Editor" WorkingDirectory="INSTALLDIR" Icon="NArrange.exe" IconIndex="0" Advertise="yes" />
+						</File>
+						<File Id="NArrange.GuiConfig.Lib" Name="NArrange.GUI.dll" Source="$(var.NArrange.GuiConfig.TargetDir)\NArrange.GUI.dll" />
+						<RemoveFolder Id="RemoveShortcutFolder" Directory="ProgramMenuDir" On="uninstall" />
+					</Component>
+					<Component Id="NArrange.ConfigSamples" Guid="047B63E6-2F6C-415d-BCFB-A39025247095">
+						<File Id="Config.Default" Name="DefaultConfig.xml" Source="$(var.NArrange.Core.ProjectDir)\DefaultConfig.xml" />
+						<File Id="Config.v026" Name="DefaultConfig.v026.xml" Source="$(var.NArrange.Core.ProjectDir)\DefaultConfig.v026.xml" />
+					</Component>
+					
+					<!-- Due to a bug in WIX 3, each file with a shortcut must be in its own component. -->
+					<Component Id="NArrange.License" Guid="2516BE25-9594-4FC6-A181-DAA127DD9732">
+						<File Id="License" Name="license.rtf" Source="..\license.rtf">
+							<Shortcut Id="LicenseStartMenu" Directory="ProgramMenuInfoDir" Name="View License" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+						</File>
+					    <RemoveFolder Id="RemoveInfoShortcutFolder" Directory="ProgramMenuInfoDir" On="uninstall" />
+					</Component>
+					<Component Id="NArrange.Readme" Guid="AAC3FD10-7FA2-4a1d-95C6-9CF443FA62B6">
+						<File Id="Readme" Name="readme.txt" Source="..\readme.txt">
+							<Shortcut Id="ReadmeStartMenu" Directory="ProgramMenuInfoDir" Name="View Readme" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+						</File>
+					</Component>
+					<Component Id="NArrange.Release" Guid="680F3970-C369-4cfd-9D5C-DA1367F59400">
+						<File Id="ReleaseNotes" Name="release.txt" Source="..\release.txt">
+							<Shortcut Id="ReleaseStartMenu" Directory="ProgramMenuInfoDir" Name="View Release Notes" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+						</File>
+					</Component>
+					<Component Id="NArrange.Homepage" Guid="E825BEAD-B7F7-4375-BD13-085D11C857FA">
+						<File Id="HomepageShortcut" Name="Homepage.url" Source="Homepage.url">
+							<Shortcut Id="HomepageStartMenu" Directory="ProgramMenuInfoDir" Name="NArrange Homepage" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+						</File>
+					</Component>
+          <Component Id="NArrange.Dependencies" Guid="2B8AD53E-C34A-41aa-9414-D9AEC5EFE4FE">
+						<File Id="ICSharpCode.SharpZipLib.Lib" Name="ICSharpCode.SharpZipLib.dll" Source="$(var.NArrange.Core.TargetDir)\ICSharpCode.SharpZipLib.dll" />
+					</Component>
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder" Name="PMenu">
+				<Directory Id="ProgramMenuDir" Name="NArrange $(var.ProductVersion)">
+					<Directory Id="ProgramMenuInfoDir" Name="Info" />
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+		<ComponentGroup Id="NArrange.Core">
+      <ComponentRef Id="NArrange.Dependencies" />
+			<ComponentRef Id="NArrange.Libs" />
+			<ComponentRef Id="NArrange.ConsoleApplication" />
+			<ComponentRef Id="NArrange.GuiConfig" />
+			<ComponentRef Id="NArrange.ConfigSamples" />
+			<ComponentRef Id="NArrange.License" />
+			<ComponentRef Id="NArrange.Readme" />
+			<ComponentRef Id="NArrange.Release" />
+			<ComponentRef Id="NArrange.Homepage" />
+		</ComponentGroup>
+	</Fragment>
+</Wix>

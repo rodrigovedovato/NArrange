@@ -1,0 +1,17 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="NArrange.Tests.Core\bin\Debug\NArrange.Tests.Core.dll" />
+    <assembly path="NArrange.Tests.CSharp\bin\Debug\NArrange.Tests.CSharp.dll" />
+    <assembly path="NArrange.Tests.VisualBasic\bin\Debug\NArrange.Tests.VisualBasic.dll" />
+    <assembly path="NArrange.Tests.ConsoleApplication\bin\Debug\NArrange.Tests.ConsoleApplication.dll" />
+    <assembly path="NArrange.Tests.Gui\bin\Debug\NArrange.Tests.Gui.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="NArrange.Tests.ConsoleApplication\bin\Release\NArrange.Tests.ConsoleApplication.dll" />
+    <assembly path="NArrange.Tests.Core\bin\Release\NArrange.Tests.Core.dll" />
+    <assembly path="NArrange.Tests.CSharp\bin\Release\NArrange.Tests.CSharp.dll" />
+    <assembly path="NArrange.Tests.Gui\bin\Release\NArrange.Tests.Gui.dll" />
+    <assembly path="NArrange.Tests.VisualBasic\bin\Release\NArrange.Tests.VisualBasic.dll" />
+  </Config>
+</NUnitProject>

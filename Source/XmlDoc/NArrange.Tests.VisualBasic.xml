@@ -1,0 +1,1078 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NArrange.Tests.VisualBasic</name>
+    </assembly>
+    <members>
+        <member name="T:NArrange.Tests.VisualBasic.VBWriteArrangedTests">
+            <summary>
+            Test fixture for parsing, arranging and writing VB test source code files.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriteArrangedTests.Compile(System.String,System.String)">
+            <summary>
+            Compiles source code text to the specified assembly.
+            </summary>
+            <param name="text">Text to compile.</param>
+            <param name="assemblyName">Output assembly name.</param>
+            <returns>Compiler results.</returns>
+        </member>
+        <member name="P:NArrange.Tests.VisualBasic.VBWriteArrangedTests.ValidTestFiles">
+            <summary>
+            Gets a list of valid test files.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBWriterTests">
+            <summary>
+            Test fixture for the VBWriter class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.ClosingCommentsTest">
+            <summary>
+            Tests writing an element with closing comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.ConsecutiveBlankLineTest">
+            <summary>
+            Tests removal of consecutive blank lines.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.TabStyleTest">
+            <summary>
+            Tests writing an element with different tab styles.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteArrangedElementTest">
+            <summary>
+            Tests writing a tree of arranged elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteAttributeElementListTest">
+            <summary>
+            Tests writing an attribute element with a list of children.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteAttributeElementTest">
+            <summary>
+            Tests writing an attribute element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteClassDefinitionGenericTest">
+            <summary>
+            Tests writing a generic class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteClassDefinitionPartialTest">
+            <summary>
+            Tests writing a partial class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteClassDefinitionTest">
+            <summary>
+            Tests writing a class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteClassDefinitionWithRegionsTest">
+            <summary>
+            Tests writing a class with regions.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteClassUnspecifiedAccessTest">
+            <summary>
+            Tests writing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteConditionDirectiveTest">
+            <summary>
+            Tests writing a condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteConditionDirectiveWithChildrenTest">
+            <summary>
+            Tests writing a condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteConstructorReferenceTest">
+            <summary>
+            Tests writing a constructor with a constructor reference.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteConstructorTest">
+            <summary>
+            Tests writing a constructor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteDelegateGenericTest">
+            <summary>
+            Tests writing a generic delegate.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteDelegateTest">
+            <summary>
+            Tests writing a delegate.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteEventImplementsTest">
+            <summary>
+            Tests writing an event that implements an interface.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteEventTest">
+            <summary>
+            Tests writing an event.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteEventWithParametersTest">
+            <summary>
+            Tests writing an event with parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldGenericTest">
+            <summary>
+            Tests writing a generic field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldNewConstantTest">
+            <summary>
+            Tests writing a new constant field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldTest">
+            <summary>
+            Tests writing a field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldTrailingCommentTest">
+            <summary>
+            Tests writing a field with a trailing comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldUntypedGenericTest">
+            <summary>
+            Tests writing an untyped generic field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFieldUntypedNewConstantTest">
+            <summary>
+            Tests writing an untyped, new constant field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFunctionExternalTest">
+            <summary>
+            Tests writing an external function.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteFunctionUntypedTest">
+            <summary>
+            Tests writing an untyped function.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteGroupNestedTest">
+            <summary>
+            Tests writing a group of elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteGroupTest">
+            <summary>
+            Tests writing a group of elements.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteInterfaceDefinitionTest">
+            <summary>
+            Tests writing an interface definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodAbstractTest">
+            <summary>
+            Tests writing an abstract method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodGenericReturnTypeTest">
+            <summary>
+            Tests writing a method with a generic return type.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodHandlesTest">
+            <summary>
+            Tests writing a method that handles an event.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodImplementsTest">
+            <summary>
+            Tests writing a method that implements an interface.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodPartialDeclarationTest">
+            <summary>
+            Tests writing a partial method declaration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodPartialImplementationTest">
+            <summary>
+            Tests writing a partial method implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodSealedTest">
+            <summary>
+            Tests writing a sealed method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteMethodTest">
+            <summary>
+            Tests writing a method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteOperatorExplicitTest">
+            <summary>
+            Tests writing an explicit operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteOperatorImplicitTest">
+            <summary>
+            Tests writing an implicit operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteOperatorTest">
+            <summary>
+            Tests writing an operator.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteRegionCommentDirectiveTest">
+            <summary>
+            Tests writing a region with comment directives.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteRegionEndRegionNameTest">
+            <summary>
+            Tests writing a region with and without end region names enabled.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteRegionNoDirectiveTest">
+            <summary>
+            Tests writing a region with no directives.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteSubExternalTest">
+            <summary>
+            Tests writing an external subroutine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteUsingElementRedefineTest">
+            <summary>
+            Tests writing a using element with a redefine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBWriterTests.WriteUsingElementTest">
+            <summary>
+            Tests writing a using element.
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBKeywordTests">
+            <summary>
+            Test fixture for the VBKeyword class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBKeywordTests.IsVBKeywordTest">
+            <summary>
+            Tests the IsVBKeyword method
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBKeywordTests.NormalizeTest">
+            <summary>
+            Tests the Normalize method
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBParserTests">
+            <summary>
+            Test fixture for the VBParser class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.ConstructorRegionIndex">
+            <summary>
+            Constructor region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.DelegateRegionIndex">
+            <summary>
+            Delegate region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.EventRegionIndex">
+            <summary>
+            Event region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.FieldRegionIndex">
+            <summary>
+            Field region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.MethodRegionIndex">
+            <summary>
+            Method region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.NestedTypeRegionIndex">
+            <summary>
+            Nested type region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBParserTests.PropertyRegionIndex">
+            <summary>
+            Property region index in ClassMembers.vb.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ExpectedBlockCloseTest">
+            <summary>
+            Tests that when the end of a block is expected, the appropriate
+            error is thrown.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ExpectedFieldInitialValueTest">
+            <summary>
+            Tests that when an initial value is expected, the appropriate
+            error is thrown.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAssemblyAttributesTest">
+            <summary>
+            Tests the parsing of assembly attributes.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAttributeCloseExpectedTest">
+            <summary>
+            Tests parsing an attribute where the closing is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAttributeListTest">
+            <summary>
+            Tests parsing an attribute list.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAttributeTest">
+            <summary>
+            Tests parsing an attribute.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAttributeWithAttributeCharacterTest">
+            <summary>
+            Tests parsing an attribute that contains an attribute
+            character in a string.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseAttributeWithLineContinuationTest">
+            <summary>
+            Tests parsing an attribute with a line continuation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseBlockEndInCommentTest">
+            <summary>
+            Tests parsing a method whose body text has a comment containing the end block text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseBlockExpectedEndElementTest">
+            <summary>
+            Tests parsing a method without a closing name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseBlockLineContinuationTest">
+            <summary>
+            Tests parsing a method whose body text uses the line continuation character.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseBlockWithClosingCommentTest">
+            <summary>
+            Tests parsing a method whose block has a closing comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single class
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassExpectedTypeImplementsTest">
+            <summary>
+            Tests parsing a class where a type implementation specification is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassExpectedTypeParameterConstraintTest">
+            <summary>
+            Tests parsing a class where a type parameter constraint is expected.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMissingEndregionTest">
+            <summary>
+            Tests parsing a class with a missing endregion tag.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMissingRegionNameTest">
+            <summary>
+            Tests parsing a class with a missing region name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterInvalidTest1">
+            <summary>
+            Tests parsing a class with invalid multiple type parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterInvalidTest2">
+            <summary>
+            Tests parsing a class with invalid multiple type parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterInvalidTest3">
+            <summary>
+            Tests parsing a class with invalid multiple type parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterTest1">
+            <summary>
+            Tests parsing a class with invalid multiple type parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterTest2">
+            <summary>
+            Tests parsing a class with multiple type parameters and constraints.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassMultipleTypeParameterTest3">
+            <summary>
+            Tests parsing a class with multiple type parameters and constraints.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassPartialUnspecifiedAccessTest">
+            <summary>
+            Tests parsing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassSimpleTest">
+            <summary>
+            Tests parsing a simple class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnclosedTypeParameterConstraintTest">
+            <summary>
+            Tests parsing a class with an unclosed type parameter constraint.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnclosedTypeParameterTest">
+            <summary>
+            Tests parsing a class with an unclosed type parameter.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnhandledElementTest1">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnhandledElementTest2">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnhandledElementTest3">
+            <summary>
+            Tests parsing a class with an invalid element.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseClassUnspecifiedAccessTest">
+            <summary>
+            Tests parsing a class with unspecified access.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseCommentedMemberTest">
+            <summary>
+            Tests parsing a commented member.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseCommentLineInvalidTest">
+            <summary>
+            Tests parsing an invalid comment line.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseCommentLineTest">
+            <summary>
+            Tests parsing a single comment line.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveAttributeUnhandledTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveElseIfTest">
+            <summary>
+            Tests parsing a condition directive with an else if condition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveElseTest">
+            <summary>
+            Tests parsing a condition directive with an else condition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveMissingConditionTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveMissingEndTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveNestedMissingEndTest">
+            <summary>
+            Tests parsing an invalid condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveNestedRegionTest">
+            <summary>
+            Tests parsing a condition directive with a nested region.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveNestedTest">
+            <summary>
+            Tests parsing a nested condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveNestedWithChildTest">
+            <summary>
+            Tests parsing a nested condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConditionDirectiveSimpleTest">
+            <summary>
+            Tests parsing a simple condition directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConstructorParametersTest">
+            <summary>
+            Tests parsing a constructor with parameters.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConstructorsTest">
+            <summary>
+            Verifies the parsing of constructor members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseConstructorTest">
+            <summary>
+            Tests parsing a constructor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseDelegatesTest">
+            <summary>
+            Verifies the parsing of delegates from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseEnumTest">
+            <summary>
+            Tests parsing an enum.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseEnumTypeTest">
+            <summary>
+            Tests parsing an enum with a type specified.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseEventsTest">
+            <summary>
+            Verifies the parsing of events from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldGenericTest">
+            <summary>
+            Tests parsing a generic field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldMultiTest1">
+            <summary>
+            Tests parsing multiple fields from a single statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldMultiTest2">
+            <summary>
+            Tests parsing multiple fields declared on one line.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldNameWithUnderscoreTest">
+            <summary>
+            Tests parsing a simple field with an underscore at the beginning of the
+            name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldSimpleTest">
+            <summary>
+            Tests parsing a simple field.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldsTest">
+            <summary>
+            Verifies the parsing of field members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldTrailingCommentTest">
+            <summary>
+            Tests parsing a field with a trailing comment.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithCharInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value that contains
+            character symbols.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithConstructedGenericValueTest">
+            <summary>
+            Tests parsing a field with a constructed initial value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithConstructedValueTest">
+            <summary>
+            Tests parsing a field with a constructed initial value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithEventsTest">
+            <summary>
+            Tests parsing a field with the WithEvents attribute.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithMultipleLineInitialValueTest">
+            <summary>
+            Tests parsing a field with a multiline initial value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFieldWithSpecialCharInitialValueTest">
+            <summary>
+            Tests parsing a field with an initial value that contains
+            special character symbols.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFunctionExternalTest">
+            <summary>
+            Tests parsing an external function.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFunctionTest">
+            <summary>
+            Tests parsing a function.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseFunctionUntypedTest">
+            <summary>
+            Tests parsing a function.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseHeaderCommentsTest">
+            <summary>
+            Tests parsing header comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseHeaderCommentsXmlTest">
+            <summary>
+            Tests parsing header comments.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseInterfaceDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single interface
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseInterfaceImplementationTest">
+            <summary>
+            Verifies the parsing of an interface implementation.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseInvalidTypeDefinitionTest">
+            <summary>
+            Tests parsing an invalid type definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMembersCountTest">
+            <summary>
+            Verifies that the correct number of members are parsed from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodAbstractTest">
+            <summary>
+            Tests parsing an abstract method.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodBodyUnexpectedEndOfFileTest">
+            <summary>
+            Tests parsing a method without a block closing.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodHandlesNameWithUnderscoreTest">
+            <summary>
+            Tests parsing a method that handles events with a reference whose
+            name contains an underscore.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodHandlesTest">
+            <summary>
+            Tests parsing a method that handles events.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodImplementsTest">
+            <summary>
+            Tests parsing a method that impelements an interface.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodNameWithUnderscoreTest">
+            <summary>
+            Tests parsing a method with an underscore at the beginning of the name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodOverloadTest">
+            <summary>
+            Tests parsing a method declared as an overload.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodPartialDeclarationTest">
+            <summary>
+            Tests parsing a partial method declaration.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodsTest">
+            <summary>
+            Verifies the parsing of methods from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodWithEndBlockLineCommentTest">
+            <summary>
+            Tests parsing a method with a block close in a comment of the 
+            body text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMethodWithEndBlockTextTest">
+            <summary>
+            Tests parsing a method with a block close in the body text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseModuleSimpleTest">
+            <summary>
+            Tests parsing a simple module.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMultiClassDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a multiple class
+            definitions.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseMultipleNamespaceTest">
+            <summary>
+            Tests the parsing of multiple namespaces.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseNamespaceExpectedEnd">
+            <summary>
+            Tests parsing of a namepsace where an opening 
+            brace is expected.";
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseNamespaceExpectedNamespace">
+            <summary>
+            Tests parsing of a namepsace where a closing 
+            brace is expected.";
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseNestedTypesTest">
+            <summary>
+            Verifies the parsing of nested types from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseNullStreamTest">
+            <summary>
+            Tests parsing a null stream.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseOperatorsTest">
+            <summary>
+            Verifies the parsing of operators.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseOptionTest">
+            <summary>
+            Tests parsing an option statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParsePropertiesTest">
+            <summary>
+            Verifies the parsing of properties members from the 
+            sample class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionCommentDirectiveMismatchedTest">
+            <summary>
+            Tests parsing unmatched nested regions that use comment directives.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionCommentDirectiveTest">
+            <summary>
+            Tests parsing nested regions that use comment directives.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionCommentsTest">
+            <summary>
+            Tests comment scenarios with region preprocessor directives. 
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionNestedTest">
+            <summary>
+            Tests parsing nested regions.  
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionTest">
+            <summary>
+            Tests parsing a region preprocessor directive. 
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseRegionUnmatchedEndDirectiveTest">
+            <summary>
+            Tests an unmatched end region directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseSingleNamespaceTest">
+            <summary>
+            Tests the parsing of a single namespace.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseStructDefinitionTest">
+            <summary>
+            Tests the parsing of a single namespace with a single structure
+            definition.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseSubExternalTest">
+            <summary>
+            Tests parsing an external subroutine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseSubTest">
+            <summary>
+            Tests parsing a subroutine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseTypeImplementsTest">
+            <summary>
+            Tests parsing a type that implements interfaces.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUnhandledPreprocessorTest">
+            <summary>
+            Tests parsing an unhandled preprocessor directive.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUnkownKeywordTest">
+            <summary>
+            Tests parsing an unrecognized keyword.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUsingEmptyNamespaceTest">
+            <summary>
+            Tests parsing an empty using statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUsingEmptyTypeOrNamespaceTest">
+            <summary>
+            Tests parsing an empty using statement with a redefine.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUsingInvalidTest">
+            <summary>
+            Tests parsing an invalid using statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUsingRedefineTest">
+            <summary>
+            Tests parsing a using statement that redefines a class/namespace.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.ParseUsingTest">
+            <summary>
+            Tests parsing a simple using statement.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBParserTests.GetMembersTestClass(System.IO.TextReader)">
+            <summary>
+            Gets the ClassMembers test class.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>A type code element.</returns>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBSymbolTests">
+            <summary>
+            Test fixture for the VBSymbol class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBSymbolTests.IsVBSymbolTest">
+            <summary>
+            Tests the IsVBSymbol method
+            </summary>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBTestUtilities">
+            <summary>
+            Visual Basic test utilities.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetAssemblyAttributesFile">
+            <summary>
+            Assembly attributes test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetClassAttributesFile">
+            <summary>
+            Class attributes test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetClassDefinitionFile">
+            <summary>
+            Class definition test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetClassMembersFile">
+            <summary>
+            Class members test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetInterfaceDefinitionFile">
+            <summary>
+            Interface definition test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetInterfaceImplementationFile">
+            <summary>
+            Interface implementation test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetModuleDefinitionFile">
+            <summary>
+            Module definition test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetMultiClassDefinitionFile">
+            <summary>
+            Multiple class definition test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetMultipleNamespaceFile">
+            <summary>
+            Multiple namespace test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetOperatorsFile">
+            <summary>
+            Operators test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetSingleNamespaceFile">
+            <summary>
+            Single namespace test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestUtilities.GetStructDefinitionFile">
+            <summary>
+            Structure definition test file
+            </summary>
+            <returns>The test file.</returns>
+        </member>
+        <member name="T:NArrange.Tests.VisualBasic.VBTestFile">
+            <summary>
+            Visual Basic test file information.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBTestFile._compiledSourceFiles">
+            <summary>
+            Cache of compiled test source files.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBTestFile._assembly">
+            <summary>
+            Assembly for the test file.
+            </summary>
+        </member>
+        <member name="F:NArrange.Tests.VisualBasic.VBTestFile._resourceName">
+            <summary>
+            Test file resource name.
+            </summary>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.#ctor(System.String)">
+            <summary>
+            Creates a new test file using the specified resource.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.Compile(System.String,System.String)">
+            <summary>
+            Compiles VB source code
+            </summary>
+            <param name="source">The source.</param>
+            <param name="name">The assembly name.</param>
+            <returns>Compiler results.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.GetTestFileReader(System.String)">
+            <summary>
+            Retrieves a reader for the specified resource.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>TextReader for the test file resource.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.GetTestFileStream(System.String)">
+            <summary>
+            Opens a test file resource stream.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>Stream for the test file resource.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.GetReader">
+            <summary>
+            Gets a TextReader for this test file
+            </summary>
+            <returns>Text reader for the test file.</returns>
+        </member>
+        <member name="M:NArrange.Tests.VisualBasic.VBTestFile.GetAssembly(System.String)">
+            <summary>
+            Gets the assembly for the specified resource.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>Assembly for the resource.</returns>
+        </member>
+        <member name="P:NArrange.Tests.VisualBasic.VBTestFile.Assembly">
+            <summary>
+            Gets the assembly associated with the test file
+            </summary>
+        </member>
+        <member name="P:NArrange.Tests.VisualBasic.VBTestFile.Name">
+            <summary>
+            Gets the name of the test file.
+            </summary>
+        </member>
+    </members>
+</doc>

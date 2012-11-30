@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NArrange.Gui</name>
+    </assembly>
+    <members>
+        <member name="T:NArrange.Gui.BaseForm">
+            <summary>
+            Base Form for NArrange application forms.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.BaseForm.#ctor">
+            <summary>
+            Creates a new BaseForm.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.BaseForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.BaseForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.BaseForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationElementCollectionEditor">
+            <summary>
+            Collection editor for configuration element collections.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationElementCollectionEditor.ItemTypes">
+            <summary>
+            Item types supported by the editor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementCollectionEditor.#ctor(System.Type)">
+            <summary>
+            Creates a new ConfigurationElementCollectionEditor.
+            </summary>
+            <param name="type">The type of the collection for this editor to edit.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementCollectionEditor.CreateInstance(System.Type)">
+            <summary>
+            Creates a new instance of the specified type.
+            </summary>
+            <param name="itemType">The type of item to create.</param>
+            <returns>A new instance of the specified object.</returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementCollectionEditor.CreateNewItemTypes">
+            <summary>
+            Gets the list of types that can be created for the collection.
+            </summary>
+            <returns>Types that the editor can create.</returns>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider">
+            <summary>
+            Custom type descriptor provider for the CodeConfiguration class.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider._baseProvider">
+            <summary>
+            Base type descriptor provider.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.#ctor(System.Type)">
+            <summary>
+            Creates a new ConfigurationElementTypeDescriptionProvider.
+            </summary>
+            <param name="type">Type to get property descriptions for.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.GetTypeDescriptor(System.Type,System.Object)">
+            <summary>
+            Create and return the custom type descriptor and chain it with the original
+            custom type descriptor.
+            </summary>
+            <param name="objectType">The type of object for which to retrieve the type descriptor.</param>
+            <param name="instance">An instance of the type. Can be null if no instance was passed to the <see cref="T:System.ComponentModel.TypeDescriptor"></see>.</param>
+            <returns>
+            An <see cref="T:System.ComponentModel.ICustomTypeDescriptor"></see> that can provide metadata for the type.
+            </returns>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.CodeConfigurationTypeDescriptor">
+            <summary>
+            Custom type descriptor. It creates a new property and returns it along
+            with the original list.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.CodeConfigurationTypeDescriptor.#ctor(System.ComponentModel.ICustomTypeDescriptor)">
+            <summary>
+            Creates a new type descriptor using the specified parent.
+            </summary>
+            <param name="parent">The parent custom type descriptor.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.CodeConfigurationTypeDescriptor.GetProperties(System.Attribute[])">
+            <summary>
+            Gets the PropertyDescriptors for the Type.
+            </summary>
+            <param name="attributes">An array of attributes to use as a filter. This can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"></see> containing the property descriptions for the object represented by this type descriptor. The default is <see cref="F:System.ComponentModel.PropertyDescriptorCollection.Empty"></see>.
+            </returns>
+            <remarks>
+            All ConfigurationElementCollection properties are overriden to specify the
+            collection editor.
+            </remarks>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.CodeConfigurationTypeDescriptor.GetProperties">
+            <summary>
+            This method add a new property to the original collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"></see> containing the property descriptions for the object represented by this type descriptor. The default is <see cref="F:System.ComponentModel.PropertyDescriptorCollection.Empty"></see>.
+            </returns>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor">
+            <summary>
+            Elements property descriptor.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor._originalProperty">
+            <summary>
+            Original, reflected property.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.#ctor(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Creates a new ElementCollectionPropertyDescriptor.
+            </summary>
+            <param name="originalProperty">The original property.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.CanResetValue(System.Object)">
+            <summary>
+            Gets a value indicating whether or not the properties value can be
+            reset for the specified component.
+            </summary>
+            <param name="component">The component to test for reset capability.</param>
+            <returns>
+            true if resetting the component changes its value; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.GetEditor(System.Type)">
+            <summary>
+            Gets the editor for this property.
+            </summary>
+            <param name="editorBaseType">The base type of editor, which is used to differentiate between multiple editors that a property supports.</param>
+            <returns>
+            An instance of the requested editor type, or null if an editor cannot be found.
+            </returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.GetValue(System.Object)">
+            <summary>
+            Gets the property value for the specified component.
+            </summary>
+            <param name="component">The component with the property for which to retrieve the value.</param>
+            <returns>
+            The value of a property for a given component.
+            </returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.ResetValue(System.Object)">
+            <summary>
+            Resets the value for this property.
+            </summary>
+            <param name="component">The component with the property value that is to be reset to the default value.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value for this property.
+            </summary>
+            <param name="component">The component with the property value that is to be set.</param>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.ShouldSerializeValue(System.Object)">
+            <summary>
+            Gets a value indicating whether the property should be
+            serialized by designers.
+            </summary>
+            <param name="component">The component with the property to be examined for persistence.</param>
+            <returns>
+            true if the property should be persisted; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.ComponentType">
+            <summary>
+            Gets the type of the component for which this property belongs.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.IsReadOnly">
+            <summary>
+            Gets a value indicating whether or not this property is read-only.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationElementTypeDescriptionProvider.ElementCollectionPropertyDescriptor.PropertyType">
+            <summary>
+            Gets the Type of this property.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationEditorControl">
+            <summary>
+            Control for editing a code configuration.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationEditorControl._configuration">
+            <summary>
+            Code configuration to edit.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.#ctor">
+            <summary>
+            Creates a new ConfigurationEditorControl.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.CreateListPropertyNode(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Creates a node for a list/collection property.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="component">The component.</param>
+            <returns>The tree node.</returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.AddChildTreeNodes(System.Windows.Forms.TreeNode,System.Object)">
+            <summary>
+            Adds child tree view nodes under the specified root node using data
+            from the configuration object.
+            </summary>
+            <param name="rootNode">The root node.</param>
+            <param name="configurationObject">The configuration.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.AddListTreeNodes(System.Windows.Forms.TreeNode,System.ComponentModel.PropertyDescriptor,System.Object,System.Collections.IList)">
+            <summary>
+            Adds nodes for a list.
+            </summary>
+            <param name="listNode">The list node.</param>
+            <param name="listProperty">The list property.</param>
+            <param name="component">The component.</param>
+            <param name="childList">The child list.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.CreatePropertyNode(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Creates a node for a regular property.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="component">The component.</param>
+            <returns>The tree node for the property.</returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.HandleConfigurationTreeViewKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Event handler for the tree view KeyDown event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.HandlePropertyGridPropertyValueChanged(System.Object,System.Windows.Forms.PropertyValueChangedEventArgs)">
+            <summary>
+            Event handler for the property grid PropertyValueChanged event.
+            </summary>
+            <param name="s">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.PropertyValueChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.HandleTreeNodeSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            Event handler for the tree view NodeSelect event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.TreeViewEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.RefreshConfiguration">
+            <summary>
+            Refreshes the UI based on the current configuration instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.RefreshListTreeNodes(System.Windows.Forms.TreeNode,System.ComponentModel.PropertyDescriptor,System.Object,System.Collections.IList)">
+            <summary>
+            Refreshes nodes within a list property.
+            </summary>
+            <param name="listNode">The list node.</param>
+            <param name="listProperty">The list property.</param>
+            <param name="component">The component.</param>
+            <param name="childList">The child list.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.RefreshTree">
+            <summary>
+            Refreshes the tree view for the current configuration instance.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationEditorControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationEditorControl.Configuration">
+            <summary>
+            Gets or sets the CodeConfiguration to edit.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationEditorForm">
+            <summary>
+            Form for editing a code configuration.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationEditorForm._canSelectConfig">
+            <summary>
+            Whether or not a configuration can be selected for editing.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.#ctor">
+            <summary>
+            Creates a new ConfigurationEditorForm.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.CreateConfiguration(System.String)">
+            <summary>
+            Creates a new configuration using the specified filename and updates
+            the UI.
+            </summary>
+            <param name="filename">The filename.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.HandleButtonCancelClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Cancel button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.HandleButtonCreateClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Create button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.HandleButtonSaveClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Save button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.HandleConfigurationPickerEditClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the configuration picker EditClick event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.LoadConfiguration(System.String)">
+            <summary>
+            Loads the configuration file into the editor and updates the UI state.
+            </summary>
+            <param name="filename">The filename.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.SaveConfiguration(System.String)">
+            <summary>
+            Saves the current configuration to the specified file and
+            updates the UI.
+            </summary>
+            <param name="filename">The filename.</param>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationEditorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationEditorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationEditorForm.CanSelectConfig">
+            <summary>
+            Gets or sets a value indicating whether a configuration can currently be selected.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ConfigurationPicker">
+            <summary>
+            Control that allows the user to select, create or edit a configuration.
+            </summary>
+            <summary>
+            Partial class.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.#ctor">
+            <summary>
+            Creates a new ConfigurationPicker.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.Refresh">
+            <summary>
+            Refreshes this control.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.HandleButtonBrowseClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Browse button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.HandleButtonCreateClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Create button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.HandleButtonEditClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Edit button click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.HandleTextBoxFileTextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the file textbox TextChanged event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.OnCreateClick">
+            <summary>
+            Called when the Create button is clicked.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.OnEditClick">
+            <summary>
+            Called when the Edit button is clicked.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.UpdateButtons">
+            <summary>
+            Updates the button state when the selected file changes.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ConfigurationPicker.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ConfigurationPicker.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:NArrange.Gui.Configuration.ConfigurationPicker.CreateClick">
+            <summary>
+            Occurs when the create button is clicked.
+            </summary>
+        </member>
+        <member name="E:NArrange.Gui.Configuration.ConfigurationPicker.EditClick">
+            <summary>
+            Occurs when the edit button is clicked.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ConfigurationPicker.SelectedFile">
+            <summary>
+            Gets or sets the selected configuration file.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ListItemTreeNode">
+            <summary>
+            Tree node for a list item.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._component">
+            <summary>
+            Component being edited.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._contextMenu">
+            <summary>
+            Context menu.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._listItem">
+            <summary>
+            Item in the list associated with the node.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._listProperty">
+            <summary>
+            Parent list property.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._moveDownMenuItem">
+            <summary>
+            Move down menu item.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._moveUpMenuItem">
+            <summary>
+            Move up menu item.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListItemTreeNode._removeMenuItem">
+            <summary>
+            Remove menu item.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.#ctor(System.ComponentModel.PropertyDescriptor,System.Object,System.Object)">
+            <summary>
+            Creates a new ListItemTreeNode.
+            </summary>
+            <param name="listProperty">The list property.</param>
+            <param name="component">The component.</param>
+            <param name="listItem">The list item.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.MoveDown">
+            <summary>
+            Moves this list item node down in the collection.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.MoveUp">
+            <summary>
+            Moves this list item node down in the collection.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.RemoveItem">
+            <summary>
+            Removes the item from the collection.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.UpdateMenu">
+            <summary>
+            Updates the context menu for the tree node.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.UpdateText">
+            <summary>
+            Updates the display text.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.HandleMoveDownMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Move Down menu item click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.HandleMoveUpMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Move Up menu item click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.HandleRemoveMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Remove menu item click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.Initialize">
+            <summary>
+            Initializes this tree node.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListItemTreeNode.Select">
+            <summary>
+            Sets this node as the selected node in the tree view.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.ListItemTreeNode.ListItem">
+            <summary>
+            Gets the list item associated with this node.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.ListPropertyTreeNode">
+            <summary>
+            Tree node for a list component property.
+            </summary>
+        </member>
+        <member name="T:NArrange.Gui.Configuration.PropertyTreeNode">
+            <summary>
+            Tree node that represents a component property.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.PropertyTreeNode._addMenuItem">
+            <summary>
+            Add menu item.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.PropertyTreeNode._component">
+            <summary>
+            Component being edited.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.PropertyTreeNode._contextMenu">
+            <summary>
+            Context menu.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.PropertyTreeNode._property">
+            <summary>
+            The component property.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.PropertyTreeNode._removeMenuItem">
+            <summary>
+            Remove menu item.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.#ctor(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Creates a new PropertyTreeNode.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="component">The component.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.ToString">
+            <summary>
+            Gets the string represenation of this object.
+            </summary>
+            <returns>The string representation.</returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.ClearProperty">
+            <summary>
+            Clears the property value.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.CreateProperty">
+            <summary>
+            Initializes the property value with a new instance.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.HandleAddMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Add menu item click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.HandleRemoveMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Event handler for the Remove menu item click event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.Initialize">
+            <summary>
+            Initializes the node.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.PropertyTreeNode.OnPropertyValueChanged">
+            <summary>
+            Called when the property value changes.
+            </summary>
+        </member>
+        <member name="E:NArrange.Gui.Configuration.PropertyTreeNode.PropertyValueChanged">
+            <summary>
+            Occurs when the PropertyValue changes.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.PropertyTreeNode.Component">
+            <summary>
+            Gets the component that the property is associated with.
+            </summary>
+        </member>
+        <member name="P:NArrange.Gui.Configuration.PropertyTreeNode.PropertyValue">
+            <summary>
+            Gets or sets the component property's value.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListPropertyTreeNode._addMenuItem">
+            <summary>
+            Add menu item.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListPropertyTreeNode._contextMenu">
+            <summary>
+            Context menu.
+            </summary>
+        </member>
+        <member name="F:NArrange.Gui.Configuration.ListPropertyTreeNode._newItemTypes">
+            <summary>
+            Types valid for the list.
+            </summary>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListPropertyTreeNode.#ctor(System.ComponentModel.PropertyDescriptor,System.Object,System.Type[])">
+            <summary>
+            Creates a new ListPropertyTreeNode.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="component">The component.</param>
+            <param name="newItemTypes">The new item types.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListPropertyTreeNode.GetDisplayName(System.Type)">
+            <summary>
+            Gets the display name for a type.
+            </summary>
+            <param name="type">The type to get the display name for.</param>
+            <returns>The dispaly name.</returns>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListPropertyTreeNode.AddItem(System.Type)">
+            <summary>
+            Adds a new item to the list of the specified type.
+            </summary>
+            <param name="type">The type to add.</param>
+        </member>
+        <member name="M:NArrange.Gui.Configuration.ListPropertyTreeNode.Initialize">
+            <summary>
+            Initializes this tree node.
+            </summary>
+        </member>
+    </members>
+</doc>

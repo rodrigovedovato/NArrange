@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD74EA33-223D-4CD9-9028-AADD4E929613}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NArrange.Core</RootNamespace>
+    <AssemblyName>NArrange.Core</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\XmlDoc\NArrange.Core.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\XmlDoc\NArrange.Core.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\XmlDoc\NArrange.Core.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\NArrange.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\XmlDoc\NArrange.Core.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\NArrange.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BackupUtilities.cs" />
+    <Compile Include="CodeElements\CommentedElement.cs" />
+    <Compile Include="CodeElements\ConditionDirectiveElement.cs" />
+    <Compile Include="CodeElements\ElementComparer.cs" />
+    <Compile Include="CodeElements\GroupElement.cs" />
+    <Compile Include="CodeElements\ICommentElement.cs" />
+    <Compile Include="CodeElements\IGenericElement.cs" />
+    <Compile Include="CodeElements\InterfaceReference.cs" />
+    <Compile Include="CodeElements\InterfaceMemberElement.cs" />
+    <Compile Include="CodeElements\TextCodeElement.cs" />
+    <Compile Include="CodeElements\RegionElement.cs" />
+    <Compile Include="CodeParser.cs" />
+    <Compile Include="CodeWriteVisitor.cs" />
+    <Compile Include="ConditionExpressionEvaluator.cs" />
+    <Compile Include="Configuration\BinaryOperatorExpression.cs" />
+    <Compile Include="Configuration\CodeConfiguration.cs" />
+    <Compile Include="CodeArranger.cs" />
+    <Compile Include="CodeElements\AttributedElement.cs" />
+    <Compile Include="CodeElements\AttributeElement.cs" />
+    <Compile Include="CodeElements\ConstructorElement.cs" />
+    <Compile Include="CodeElements\DelegateElement.cs" />
+    <Compile Include="CodeElements\EventElement.cs" />
+    <Compile Include="CodeElements\PropertyElement.cs" />
+    <Compile Include="CodeElements\MethodElement.cs" />
+    <Compile Include="CodeElements\MemberElement.cs" />
+    <Compile Include="CodeElements\FieldElement.cs" />
+    <Compile Include="CodeElements\TypeElement.cs" />
+    <Compile Include="CodeElements\CodeElement.cs" />
+    <Compile Include="CodeElements\TypeParameter.cs" />
+    <Compile Include="CodeElements\UsingElement.cs" />
+    <Compile Include="CodeElements\CommentElement.cs" />
+    <Compile Include="Configuration\ConfigurationElement.cs" />
+    <Compile Include="Configuration\ClosingCommentConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\UsingConfiguration.cs" />
+    <Compile Include="Configuration\LineSpacingConfiguration.cs" />
+    <Compile Include="Configuration\FormattingConfiguration.cs" />
+    <Compile Include="Configuration\HandlerConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ProjectHandlerConfiguration.cs" />
+    <Compile Include="Configuration\ExtensionConfigurationCollection.cs" />
+    <Compile Include="Configuration\HandlerConfigurationCollection.cs" />
+    <Compile Include="Configuration\EncodingConfiguration.cs" />
+    <Compile Include="Configuration\ElementReferenceConfiguration.cs" />
+    <Compile Include="Configuration\RegionFormatConfiguration.cs" />
+    <Compile Include="Configuration\SourceHandlerConfiguration.cs" />
+    <Compile Include="Configuration\UnaryOperatorExpression.cs" />
+    <Compile Include="Configuration\FileAttributeExpression.cs" />
+    <Compile Include="Configuration\ElementAttributeExpression.cs" />
+    <Compile Include="ProjectHandler.cs" />
+    <Compile Include="MonoDevelopSolutionParser.cs" />
+    <Compile Include="MonoDevelopProjectParser.cs" />
+    <Compile Include="FileUtilities.cs" />
+    <Compile Include="FileFilter.cs" />
+    <Compile Include="ElementFilter.cs" />
+    <Compile Include="Configuration\TabConfiguration.cs" />
+    <Compile Include="Configuration\ExtensionConfiguration.cs" />
+    <Compile Include="Configuration\LeafExpression.cs" />
+    <Compile Include="Configuration\FilterBy.cs" />
+    <Compile Include="Configuration\ConditionExpressionParser.cs" />
+    <Compile Include="Configuration\IConditionExpression.cs" />
+    <Compile Include="Configuration\SortBy.cs" />
+    <Compile Include="Configuration\ElementConfiguration.cs" />
+    <Compile Include="Configuration\GroupBy.cs" />
+    <Compile Include="Configuration\RegionConfiguration.cs" />
+    <Compile Include="CodeElements\ICodeElementVisitor.cs" />
+    <Compile Include="Configuration\StringExpression.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="IFileFilter.cs" />
+    <Compile Include="ISolutionParser.cs" />
+    <Compile Include="MonoUtilities.cs" />
+    <Compile Include="MSBuildProjectParser.cs" />
+    <Compile Include="EnumUtilities.cs" />
+    <Compile Include="FileArranger.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="MSBuildSolutionParser.cs" />
+    <Compile Include="ProjectManager.cs" />
+    <Compile Include="RegionArranger.cs" />
+    <Compile Include="SolutionParser.cs" />
+    <Compile Include="IProjectParser.cs" />
+    <Compile Include="CodeElements\ElementUtilities.cs" />
+    <Compile Include="SourceHandler.cs" />
+    <Compile Include="ICodeElementWriter.cs" />
+    <Compile Include="DefaultElementInserter.cs" />
+    <Compile Include="ElementArranger.cs" />
+    <Compile Include="GroupedInserter.cs" />
+    <Compile Include="IElementArranger.cs" />
+    <Compile Include="ChainElementArranger.cs" />
+    <Compile Include="ElementArrangerFactory.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="CodeElements\IAttributeElement.cs" />
+    <Compile Include="CodeElements\IAttributedElement.cs" />
+    <Compile Include="ICodeArranger.cs" />
+    <Compile Include="CodeElements\ICodeElement.cs" />
+    <Compile Include="ICodeElementParser.cs" />
+    <Compile Include="CodeElements\NamespaceElement.cs" />
+    <Compile Include="IElementFilter.cs" />
+    <Compile Include="IElementInserter.cs" />
+    <Compile Include="ParseException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortedInserter.cs" />
+    <Compile Include="CodeWriter.cs" />
+    <Compile Include="ZipUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DefaultConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultConfig.v026.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
